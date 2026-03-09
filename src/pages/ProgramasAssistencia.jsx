@@ -135,7 +135,7 @@ const programs = [
     ],
     howToApply:
       'Procure uma farmácia credenciada ao Farmácia Popular com receita médica e documento de identidade com CPF. Não é necessária inscrição prévia.',
-    contact: 'Disque Saúde: 136 (gratuito) | gov.br/farmaciaпопуляр',
+    contact: 'Disque Saúde: 136 (gratuito) | gov.br/farmaciapopular',
     website: 'https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/farmacia-popular',
   },
   {
