@@ -1,0 +1,97 @@
+.ef-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ef-module-card {
+  background-color: var(--card-bg, #f9f9f9);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--color-text);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.ef-module-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.ef-module-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ef-module-icon {
+  font-size: 2rem;
+}
+
+.ef-module-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.ef-module-time {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.ef-module-card h3 {
+  font-size: 1.1rem;
+}
+
+.ef-module-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  flex: 1;
+  line-height: 1.6;
+}
+
+.ef-module-cta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Tips */
+.ef-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.ef-tip {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 1.75rem;
+}
+
+.ef-tip div {
+  flex: 1;
+}
+
+.ef-tip strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.ef-tip p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}

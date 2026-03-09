@@ -1,0 +1,155 @@
+.pa-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.pa-filter-btn {
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.pa-filter-btn:hover {
+  border-color: var(--color-primary);
+  background-color: #e8f5e9;
+}
+
+.pa-filter-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.pa-programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pa-program-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.pa-program-card.expanded {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.pa-program-header {
+  width: 100%;
+  background: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.pa-program-header:hover {
+  background-color: #f9fafb;
+}
+
+.pa-program-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.pa-program-title {
+  flex: 1;
+}
+
+.pa-program-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.pa-program-name-row h3 {
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.pa-program-summary {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.pa-program-chevron {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.pa-program-body {
+  padding: 0 1.5rem 1.5rem 4.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.pa-program-desc {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+.pa-program-body h4 {
+  font-size: 0.95rem;
+  color: var(--color-primary-dark);
+  margin: 1rem 0 0.5rem;
+}
+
+.pa-program-body p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.pa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+}
+
+.pa-list li {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.pa-contact-box {
+  background-color: #f0f4f0;
+  border-radius: var(--border-radius);
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .pa-program-body {
+    padding: 0 1rem 1.25rem;
+  }
+
+  .pa-program-header {
+    padding: 1rem;
+  }
+}
