@@ -1,18 +1,17 @@
-# �� IAmiga - Assistente Virtual Educa Grana
+# 🤖 IAmiga - Assistente Virtual Educa Grana
 
 <div align="center">
 
-`https://img.shields.io/badge/Python-3.13+-blue.svg`
-`https://img.shields.io/badge/LangChain-0.1.x-green.svg`
-`https://img.shields.io/badge/Streamlit-1.28+-red.svg`
-`https://img.shields.io/badge/Search-TF--IDF-orange.svg`
-`https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg`
+![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)
+![LangChain](https://img.shields.io/badge/LangChain-0.1.x-green.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)
+![TF--IDF](https://img.shields.io/badge/Search-TF--IDF-orange.svg)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
 
-**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana**
+**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana **
 
-</div>
+[Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Glossário](#-glossário-e-query-rewrite) • [Análise](#-análise-e-feedback-loop) • [Segurança](#-segurança)
 
----
 
 ## 📖 Sobre o Projeto
 
