@@ -37,7 +37,7 @@ A **IAmiga** é a assistente virtual inteligente do Educa Grana, projetada para 
 
 - **Interface Amigável:** Chat moderno via Streamlit com histórico de conversas.
 - **Personalidade Humanizada:** Respostas acolhedoras e cordiais, como uma amiga ajudando.
-- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para 1035 documentos) de informações na base de conhecimento.
+- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para 21 documentos) de informações na base de conhecimento.
 - **Query Rewrite + Re-ranking:** Expansão inteligente de perguntas com glossário de domínio para melhorar a relevância das respostas.
 - **Conteúdo Educativo:** Oferece orientações claras e concisas sobre tópicos essenciais para o público do Educa Grana, como planejamento de orçamento, poupança, investimento e gestão de dívidas, adaptados para fácil compreensão.
 - **Feedback Loop:** Sistema de votos (👍��) e telemetria para melhoria contínua da qualidade das respostas.
@@ -47,8 +47,8 @@ A **IAmiga** é a assistente virtual inteligente do Educa Grana, projetada para 
 
 ```mermaid
 graph TB
-    A[📄 89 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
-    B --> C[📊 knowledge_base.json<br/>1035 documentos]
+    A[📄 15 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
+    B --> C[📊 knowledge_base.json<br/>21 documentos]
     C --> D[�� TF-IDF Search Engine<br/>scikit-learn]
     
     E[�� Usuário] --> F[�� Streamlit Frontend<br/>localhost:8502]
@@ -109,7 +109,7 @@ ALLOW_INSECURE_SSL=false
 
 ### 4. **Preparar Base de Conhecimento**
 
-Os PDFs do Educa Grana (89 arquivos) já estão na pasta `data/docs/`. Para processá-los e criar a base de conhecimento `knowledge_base.json` (com 1035 documentos indexados):
+Os PDFs do Educa Grana (15 arquivos) já estão na pasta `data/docs/`. Para processá-los e criar a base de conhecimento `knowledge_base.json` (com 21 documentos indexados):
 
 ```powershell
 python src/create_vectordb.py
@@ -192,9 +192,9 @@ iAmiga/
 │           └── �� app.py             # Interface Streamlit
 │
 ├── 📂 data/                          # Dados do sistema
-│   ├── 📊 knowledge_base.json        # ⭐ Base de conhecimento indexada (1035 documentos)
+│   ├── 📊 knowledge_base.json        # ⭐ Base de conhecimento indexada (21 documentos)
 │   │
-│   └── 📂 docs/                      # Documentos fonte (89 PDFs + 1 TXT)
+│   └── 📂 docs/                      # Documentos fonte (15 PDFs + 1 TXT)
 │
 └── 📂 scripts/                       # Scripts utilitários e de manutenção (ex: glossário, análise)
 ```
