@@ -292,8 +292,8 @@ python scripts/add_to_glossary.py
 ```json
 {
   "aliases": {
-    "operação": ["empréstimo", "contrato", "ccb"],
-    "prazo": ["vencimento", "período", "duração"]
+    "operação": ["empréstimo", "poupança", "cartão"],
+    "prazo": ["juros", "período", "duração"]
   },
   "stop_expansion_in": ["CNPJ", "CPF"],
   "doc_boosts": {
