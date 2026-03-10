@@ -13,32 +13,44 @@
 [Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Glossário](#-glossário-e-query-rewrite) • [Análise](#-análise-e-feedback-loop) • [Segurança](#-segurança)
 
 </div>
+## 📖 Sobre o Projeto
+
+O **Educa Grana** é um aplicativo que propõe uma **"Educação que faz diferença"** para **comunidades de baixa renda**, com foco nos beneficiários do **Bolsa Família**. Desenvolvido como uma atividade extensionista acadêmica, o projeto tem como missão principal o desenvolvimento de um aplicativo de educação financeira, ensinando habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social.
+
+Seus objetivos primordiais são:
+- 🌍 **Inclusão Financeira:** Oferecer acesso online a conteúdos de educação financeira, ensinando habilidades fundamentais de gestão de orçamento, poupança, investimento e controle de dívidas.
+- 💪 **Empoderamento Econômico e Social:** Capacitar populações vulneráveis para tomar decisões conscientes, estimulando autoconfiança e autoestima, e contribuindo para uma vida mais estável e resiliente.
+- 📈 **Redução das Desigualdades:** Contribuir para romper o ciclo da pobreza e promover uma sociedade mais justa e resiliente, oferecendo oportunidades de aprendizado e desenvolvimento financeiro.
+
+A tecnologia, neste contexto, é empregada como uma ferramenta estratégica para gerar impacto social, combinando **educação digital** com **informações sobre programas de assistência social**.
 
 ---
 
-## 📖 Sobre o Projeto
+## �� Objetivos Sociais
 
-O **IAmiga** é a assistente virtual especializada do Programa Educa Grana, aplicativo de educação financeira para comunidades de baixa renda, que ensina habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social.:
+O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS)** da ONU:
 
-- 🔍 **Buscar** informações relevantes em documentos técnicos e manuais
-- 🧠 **Compreender** perguntas em linguagem natural (português)
-- 💬 **Responder** de forma humana, acolhedora e cordial (como uma amiga ajudando)
-- 📚 **Citar** as fontes consultadas com scores de relevância
-- 🔒 **Garantir** segurança com SSL/TLS configurável
+- **ODS 01:** Erradicação da pobreza
+- **ODS 04:** Educação de qualidade
+- **ODS 08:** Trabalho decente e crescimento econômico
 
-### ✨ Principais Funcionalidades
+**Resultados esperados:**
+- Aumento do uso de serviços financeiros formais
+- Redução de dívidas e desperdícios
+- Melhoria na alfabetização financeira
+
+---
+
+## ✨ Funcionalidades da IAmiga
 
 - **Interface Amigável:** Chat moderno via Streamlit com histórico de conversas
-- **Personalidade Humanizada:** Respostas acolhedoras e cordiais, como uma amiga ajudando (não robótica)
-- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para 1035 documentos)
+- **Personalidade Humanizada:** Respostas acolhedoras e cordiais, como uma amiga ajudando
+- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para YY documentos)
 - **Query Rewrite + Re-ranking:** Expansão inteligente de queries com glossário de domínio
-- **Normalização Morfológica:** Tratamento automático de singular/plural e acentos
-- **Citação de Fontes:** Rastreabilidade completa com scores de relevância
+- **Conteúdo Educativo:** Oferece orientações claras e concisas sobre tópicos essenciais para o público do Educa Grana, como planejamento de orçamento, poupança, investimento e gestão de dívidas, adaptados para fácil compreensão.
 - **Feedback Loop:** Sistema de votos (👍👎) e telemetria para melhoria contínua
 - **SSL Flexível:** Suporte a certificados corporativos customizados
 - **Logging Completo:** Sistema de logs estruturado para debugging
-- **Type Hints:** Código totalmente tipado para melhor manutenibilidade
-- **Otimizado:** Dependências reduzidas em 80% (15 pacotes core)
 
 ---
 
@@ -46,9 +58,9 @@ O **IAmiga** é a assistente virtual especializada do Programa Educa Grana, apli
 
 ```mermaid
 graph TB
-    A[📄 89 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
-    B --> C[📊 knowledge_base.json<br/>1035 documentos]
-    C --> D[🔍 TF-IDF Search Engine<br/>scikit-learn]
+    A[📄 XX PDFs Educa Grana] --> B[🔄 create_vectordb.py]
+    B --> C[📊 knowledge_base.json<br/>YY documentos]
+    C --> D[�� TF-IDF Search Engine<br/>scikit-learn]
     
     E[👤 Usuário] --> F[💬 Streamlit Frontend<br/>localhost:8502]
     F --> G[🤖 Agent RAG<br/>src/agent.py]
@@ -66,28 +78,15 @@ graph TB
     end
 ```
 
-### 🔧 Stack Tecnológico
+---
 
-| Componente | Tecnologia | Versão | Função |
-|------------|------------|--------|---------|
-| **Frontend** | Streamlit | 1.28+ | Interface web de chat |
-| **Framework RAG** | LangChain Core | 0.1.x | Orquestração básica |
-| **LLM** | LiteLLM (BNB) | Custom | Geração de respostas (bnb-gpt-5-mini) |
-| **Search Engine** | scikit-learn TF-IDF | 1.3+ | Busca semântica vetorial (5000 features) |
-| **Document Processing** | PyPDF2 + Unstructured | 3.0+ | Extração de texto de PDFs |
-| **SSL/TLS** | Requests + Certifi | 2.31+ | Comunicação segura com API |
-| **Environment** | python-dotenv | 1.0+ | Gestão de configurações sensíveis |
-| **Logging** | Python logging | Built-in | Sistema de logs estruturado |
+## 📊 Estatísticas da Base de Conhecimento
 
-### 📊 Estatísticas da Base de Conhecimento
-
-- **📄 Documentos fonte:** 89 PDFs + 1 TXT (Educa Grana_base.txt)
-- **📚 Chunks processados:** 1035 documentos indexados
+- **📄 Documentos fonte:** XX PDFs + 1 TXT (Educa Grana_base.txt)
+- **📚 Chunks processados:** YY documentos indexados
 - **🔍 Vetores TF-IDF:** 5000 features extraídas
-- **⚡ Performance:** < 0.001s para busca em 1035 documentos
-- **💾 Tamanho total:** knowledge_base.json com conteúdo estruturado
+- **⚡ Performance:** < 0.001s para busca em YY documentos
 - **🏷️ Metadados:** kind, title, section, version_date para cada documento
-- **📖 Glossário:** 10+ grupos de aliases para expansão de queries
 
 ---
 
@@ -137,8 +136,8 @@ notepad .env  # Windows
 ```bash
 # === API LLM ===
 OPENAI_API_KEY=sua_chave_api_aqui
-OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
-OPENAI_MODEL=bnb-gpt-5-mini
+OPENAI_BASE_URL=https://url
+OPENAI_MODEL=modelopenai
 
 # === SSL Corporativo (BNB) ===
 REQUESTS_CA_BUNDLE=C:\Users\SEU_USER\certs\ca-bnb.pem
@@ -152,7 +151,7 @@ ALLOW_INSECURE_SSL=false  # Apenas para desenvolvimento
 
 ```powershell
 # Adicionar PDFs na pasta data/docs/
-# Já existe Educa Grana_base.txt + 89 PDFs
+# Já existe Educa Grana_base.txt + XX PDFs
 
 # Processar documentos e criar knowledge_base.json
 python src/create_vectordb.py
@@ -174,50 +173,8 @@ streamlit run src\core\frontend\app.py
 
 # Interface disponível em:
 # 🌐 Local: http://localhost:8502
-# 🌐 Network: http://SEU_IP:8502
+# �� Network: http://SEU_IP:8502
 ```
-
----
-
-## ⚙️ Configuração
-
-### 📝 Arquivo `.env`
-
-```bash
-# ===================================================================
-# iAmiga - Configuração de Ambiente
-# ===================================================================
-
-# === API LLM (OBRIGATÓRIO) ===
-OPENAI_API_KEY=sua_chave_api_aqui
-OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
-OPENAI_MODEL=bnb-gpt-5-mini
-
-# === SSL/TLS (OBRIGATÓRIO para BNB) ===
-# Caminho para certificado corporativo ca-bnb.pem
-REQUESTS_CA_BUNDLE=C:\Users\F147176\certs\ca-bnb.pem
-SSL_CERT_FILE=C:\Users\F147176\certs\ca-bnb.pem
-
-# === Desenvolvimento (OPCIONAL) ===
-# Permitir SSL inseguro APENAS em desenvolvimento
-# NUNCA use em produção!
-ALLOW_INSECURE_SSL=false
-
-# === Logging (OPCIONAL) ===
-LOG_LEVEL=INFO  # DEBUG | INFO | WARNING | ERROR
-```
-
-### 🔧 Configurações Disponíveis
-
-| Variável | Padrão | Descrição |
-|----------|--------|-----------|
-| `OPENAI_API_KEY` | *Obrigatório* | Chave de API para LLM |
-| `OPENAI_BASE_URL` | *Obrigatório* | URL base da API LiteLLM |
-| `OPENAI_MODEL` | bnb-gpt-5-mini | Modelo LLM a ser utilizado |
-| `REQUESTS_CA_BUNDLE` | *Obrigatório* | Caminho do certificado SSL corporativo |
-| `SSL_CERT_FILE` | *Obrigatório* | Caminho alternativo para certificado SSL |
-| `ALLOW_INSECURE_SSL` | false | Permitir SSL inseguro (dev apenas) |
-| `LOG_LEVEL` | INFO | Nível de logging (DEBUG, INFO, WARNING, ERROR) |
 
 ---
 
@@ -235,8 +192,8 @@ streamlit run src\core\frontend\app.py
 1. **Acesse:** http://localhost:8502
 2. **Digite:** Sua pergunta sobre Educa Grana
 3. **Aguarde:** Processamento da busca e geração da resposta
-4. **Visualize:** 
-   - Resposta formatada da AiAmiga
+4. **Visualize:**
+   - Resposta formatada da IAmiga
 5. **Vote:** Use os botões 👍 ou 👎 para feedback (opcional)
    - Seção "📚 Fontes consultadas" com relevância
    - Indicação do tipo de busca utilizada
@@ -244,11 +201,11 @@ streamlit run src\core\frontend\app.py
 ### 2. **Exemplos de Perguntas**
 
 **✅ Perguntas Eficazes:**
-- "O que é o Educa Grana?"
-- "Quais os requisitos para ser cliente do Educa Grana?"
-- "Como funciona o processo de crédito?"
-- "Quais as taxas de juros praticadas?"
-- "Como solicitar um empréstimo?"
+- "O que faço para não pagar juros ?"
+- "Não tenho grana para pagar o cartão, o que faço"
+- "Perdi o emprego o que faço agora?"
+- "Estou pensando em emprrender, o que devo fazer?"
+
 
 **❌ Evite:**
 - Perguntas muito genéricas ("Me fale tudo")
@@ -258,25 +215,23 @@ streamlit run src\core\frontend\app.py
 ### 3. **Resposta Típica**
 
 ```
-😊 Olá! Que bom te ver aqui! Vou te explicar sobre o Educa Grana...
+Olá! Que bom te ver aqui! Vou te explicar sobre o Educa Grana...
 
-O Educa Grana é aplicativo de educação financeira para comunidades de baixa renda, que ensina habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social, através de uma Chat Bot Inteligente
+O Educa Grana é um aplicativo de educação financeira voltado para comunidades de baixa renda, especialmente os beneficiários do Bolsa Família. Ele foi desenvolvido para ensinar habilidades financeiras básicas e fornecer acesso a informações sobre programas de assistência social. O objetivo principal é promover a inclusão financeira, o empoderamento econômico e social, e a redução das desigualdades.
 
-**Principais características:**
-• Atende empreendedores de pequeno porte
-• Oferece orientação e acompanhamento
-• Crédito com condições especiais
+Alguns pontos importantes:
+• Foco em habilidades de gestão financeira (orçamento, poupança, dívidas).
+• Capacita os usuários a tomar decisões conscientes e melhorar sua situação financeira.
+• Contribui para romper o ciclo da pobreza e construir uma sociedade mais justa.
 
 📚 Fontes consultadas:
-1. **Manual_Educa Grana_2024.pdf** (relevância: 0.85)
-2. **Procedimentos_Operacionais.pdf** (relevância: 0.72)
-3. **FAQ_Educa Grana.pdf** (relevância: 0.68)
+1. **Atividades Extensionistas - Elisangela Santana - RU 4296109-Final.pdf** (relevância: 0.92)
 
 🧠 Resposta gerada com busca semântica
 
-Estou aqui se precisar de mais alguma informação! 😊
+Estou aqui se precisar de mais alguma informação!
 
-🤖 AiAmiga - Assistente Virtual do Educa Grana
+🤖 IAmiga - Assistente Virtual do Educa Grana
 ```
 
 ### 4. **Usar Diretamente via Python**
@@ -288,13 +243,16 @@ from src.agent import answer_question
 question = "O que é o Educa Grana?"
 response = answer_question(question)
 
-pri
+print(response)
+```
 
-## 📖 Glossário e Query Rewrite
+---
+
+## �� Glossário e Query Rewrite
 
 O sistema utiliza um **glossário de domínio** para expandir automaticamente as queries do usuário, melhorando a cobertura e relevância dos resultados.
 
-### 🎯 Como Funciona
+### �� Como Funciona
 
 **1. Normalização Morfológica:**
 - Remove acentos: `"operação"` → `"operacao"`
@@ -328,7 +286,7 @@ python scripts/add_to_glossary.py
 1. ➕ Adicionar/editar alias
 2. ⚖️ Ajustar doc_boost
 3. 🛑 Adicionar termo protegido
-4. 📄 Ver glossário completo
+4. �� Ver glossário completo
 
 **Opção 2 - Edição Manual:**
 ```json
@@ -349,7 +307,7 @@ python scripts/add_to_glossary.py
 
 ---
 
-## 📊 Análise e Feedback Loop
+## �� Análise e Feedback Loop
 
 Sistema de telemetria e análise para **aprendizado contínuo** baseado no uso real.
 
@@ -382,7 +340,7 @@ python scripts/run_weekly_analysis.py
 - Termos candidatos ao glossário
 - Ajustes recomendados em `doc_boosts`
 
-### 🤖 Scripts Disponíveis
+### �� Scripts Disponíveis
 
 | Script | Função |
 |--------|--------|
@@ -405,12 +363,9 @@ python scripts/run_weekly_analysis.py
 0 9 * * 1 cd /path/to/iAmiga && python scripts/run_weekly_analysis.py
 ```
 
----nt(response)
-```
-
 ---
 
-## 🔒 Segurança
+## �� Segurança
 
 ### **Melhorias de Segurança Implementadas**
 
@@ -460,7 +415,7 @@ python test_security_improvements.py
 
 ```
 iAmiga/
-├── 📄 README.md                      # Este arquivo
+├── �� README.md                      # Este arquivo
 ├── 📝 .env.example                   # Template de configuração
 ├── 🔒 .env                           # Configuração local (criar, não commitado)
 ├── 📋 requirements.txt               # Dependências otimizadas (15 pacotes)
@@ -471,7 +426,7 @@ iAmiga/
 │   ├── 🤖 agent.py                   # ⭐ Agente RAG principal (514 linhas)
 │   ├── 🔄 create_vectordb.py         # Processador de PDFs → JSON
 │   │
-│   └── 📂 core/                      # Módulos core
+│   └── �� core/                      # Módulos core
 │       ├── ⚙️ config.py              # Configurações do sistema
 │       ├── 🔗 embedding.py           # (Legado - não usado)
 │       ├── 📄 loader.py              # (Legado - não usado)
@@ -481,19 +436,19 @@ iAmiga/
 │           └── 🎨 app.py             # Interface Streamlit
 │
 ├── 📂 data/                          # Dados do sistema
-│   ├── 📊 knowledge_base.json        # ⭐ Base indexada (1035 docs)
+│   ├── 📊 knowledge_base.json        # ⭐ Base indexada (YY docs)
 │   │
-│   └── 📂 docs/                      # Documentos fonte
+│   └── �� docs/                      # Documentos fonte
 │       ├── 📕 Educa Grana_base.txt    # Base textual
-│       └── 📕 *.pdf                  # 89 PDFs do Educa Grana
+│       └── 📕 *.pdf                  # XX PDFs do Educa Grana
 │
 ├── 📂 scripts/                       # Scripts utilitários
-│   ├── 🔍 check_imports.py           # Verificar dependências
+│   ├── �� check_imports.py           # Verificar dependências
 │   ├── 🧪 langchain_llm_test.py      # Teste de LLM
 │   ├── 🧪 test_embeddings.py         # Teste de embeddings
 │   └── 🌐 test_httpx_tls.py          # Teste de conectividade
 │
-├── 🧪 test_*.py                      # Scripts de teste do sistema
+├── �� test_*.py                      # Scripts de teste do sistema
 ├── 📂 venv/                          # Ambiente virtual (auto-criado)
 └── 📂 chroma/                        # ChromaDB (não usado atualmente)
 ```
@@ -505,7 +460,7 @@ iAmiga/
 | `src/agent.py` | 514 | **Core do sistema:** busca TF-IDF, API LLM, citação de fontes |
 | `src/create_vectordb.py` | ~100 | Processa PDFs e cria knowledge_base.json |
 | `src/core/frontend/app.py` | ~150 | Interface Streamlit com chat |
-| `data/knowledge_base.json` | 1035 docs | Base de conhecimento indexada |
+| `data/knowledge_base.json` | YY docs | Base de conhecimento indexada |
 | `requirements.txt` | 15 deps | Dependências otimizadas |
 
 ---
@@ -529,33 +484,6 @@ python test_security_improvements.py
 ✅ OPENAI_API_KEY: sk-proj...****
 ✅ OPENAI_BASE_URL: https://bn-s654...
 ✅ OPENAI_MODEL: bnb-gpt-5-mini
-1.0 - Janeiro 2026** (Feature: Query Rewrite + Feedback Loop)
-
-**🔍 Query Intelligence:**
-- ✅ Query Rewrite com glossário de domínio (10+ grupos de aliases)
-- ✅ Normalização morfológica (singular/plural + acentos)
-- ✅ Re-ranking heurístico (boost por tipo + título + tamanho)
-- ✅ Telemetria de queries e expansões
-
-**📊 Feedback Loop:**
-- ✅ Sistema de votos (👍👎) na interface Streamlit
-- ✅ Análise automática de telemetria (scripts/analyze_telemetry.py)
-- ✅ Sugestões inteligentes de glossário (scripts/suggest_glossary_updates.py)
-- ✅ Dashboard HTML com métricas visuais
-- ✅ Editor interativo de glossário (scripts/add_to_glossary.py)
-
-**📚 Metadados Enriquecidos:**
-- ✅ Classificação automática de documentos (kind: normativo, procedimento, etc.)
-- ✅ Extração de versão/data dos PDFs
-- ✅ Extração de títulos dos documentos
-- ✅ 1035 documentos com metadados completos
-
-**📖 Documentação:**
-- ✅ COMO_ADICIONAR_AO_GLOSSARIO.md - Guia completo do glossário
-- ✅ FEEDBACK_LOOP_IMPLEMENTATION.md - Sistema de análise
-- ✅ scripts/README.md - Documentação dos scripts
-
-### **v2.
 🔒 Testando configuração SSL...
 ✅ Certificado SSL encontrado: C:\Users\...\ca-bnb.pem
 
@@ -574,10 +502,6 @@ Processando...
 ✅ PASSOU - Configuração SSL
 ✅ PASSOU - Importação do Agent
 ✅ PASSOU - Processamento de pergunta
-COMO_ADICIONAR_AO_GLOSSARIO.md](COMO_ADICIONAR_AO_GLOSSARIO.md) - Guia do glossário
-- [FEEDBACK_LOOP_IMPLEMENTATION.md](FEEDBACK_LOOP_IMPLEMENTATION.md) - Sistema de análise
-- [scripts/README.md](scripts/README.md) - Documentação dos scripts de análise
-- [
 Total: 4/4 testes passaram
 🎉 TODOS OS TESTES PASSARAM!
 ```
@@ -589,8 +513,8 @@ Total: 4/4 testes passaram
 python src/agent.py
 
 # Logs esperados:
-# [KB] Base carregada: 1035 documentos
-# [ENGINE] Sistema TF-IDF inicializado! Vetores: (1035, 5000)
+# [KB] Base carregada: YY documentos
+# [ENGINE] Sistema TF-IDF inicializado! Vetores: (YY, 5000)
 # [SEARCH] Busca TF-IDF: 5 resultados em 0.001s
 # [API] Sucesso com certificado customizado
 # [AGENT] Resposta gerada com sucesso!
@@ -694,56 +618,64 @@ Os emojis aparecem apenas nas respostas ao usuário (Streamlit suporta UTF-8).
 
 ### **v2.0.0 - Janeiro 2026** (Commit: b7a95b6)
 
-**🔒 Segurança:**
-- ✅ SSL flexível via variáveis de ambiente (.env)
-- ✅ Remoção de caminhos hardcoded de certificados
-- ✅ Sistema de fallback SSL com 3 níveis
-- ✅ Criação de .env.example com template
-- ✅ Remoção de credentials hardcoded
+**🔍 Query Intelligence:**
+- ✅ Query Rewrite com glossário de domínio (10+ grupos de aliases)
+- ✅ Normalização morfológica (singular/plural + acentos)
+- ✅ Re-ranking heurístico (boost por tipo + título + tamanho)
+- ✅ Telemetria de queries e expansões
 
-**🏗️ Arquitetura:**
-- ✅ Consolidação: src/src/agent.py → src/agent.py
-- ✅ Remoção de 12 arquivos obsoletos (~130KB)
-- ✅ Correção de imports no Streamlit
-- ✅ Documentação: ARCHIVE_REMOVED.md
+**📊 Feedback Loop:**
+- ✅ Sistema de votos (👍👎) na interface Streamlit
+- ✅ Análise automática de telemetria (scripts/analyze_telemetry.py)
+- ✅ Sugestões inteligentes de glossário (scripts/suggest_glossary_updates.py)
+- ✅ Dashboard HTML com métricas visuais
+- ✅ Editor interativo de glossário (scripts/add_to_glossary.py)
 
-**✨ Qualidade:**
-- ✅ 100+ print() → logger com níveis
-- ✅ Type hints completas em todas as funções
-- ✅ Remoção de emojis dos logs (Windows cp1252)
-- ✅ Otimização de requirements.txt (60 → 15 pacotes)
+**📚 Metadados Enriquecidos:**
+- ✅ Classificação automática de documentos (kind: normativo, procedimento, etc.)
+- ✅ Extração de versão/data dos PDFs
+- ✅ Extração de títulos dos documentos
+- ✅ YY documentos com metadados completos
 
-**🎯 Funcionalidades:**
-- ✅ Busca TF-IDF (scikit-learn)
-- ✅ Citação automática de fontes com scores
-- ✅ Base de conhecimento: 1035 documentos
-- ✅ Script de teste: test_security_improvements.py
-
-**📊 Estatísticas:**
-- 73 arquivos alterados
-- +14,986 linhas adicionadas
-- -2,572 linhas removidas
+**📖 Documentação:**
+- ✅ COMO_ADICIONAR_AO_GLOSSARIO.md - Guia completo do glossário
+- ✅ FEEDBACK_LOOP_IMPLEMENTATION.md - Sistema de análise
+- ✅ scripts/README.md - Documentação dos scripts
 
 ---
 
-## 📞 Suporte
+## �� Suporte
 
 **Desenvolvido por:**
-- Banco do Nordeste - CINN (Centro de Inovação)
+- Banco do iAmiga - CINN (Centro de Inovação)
 - Fábrica de IA
 
 **Repositório:**
-- https://gitlab.dreads.bnb/cinm/projetos-estrategicos-cinm/iamiga
+- https://github.com/esantanap/Educa-Grana.git
 
 **Documentação adicional:**
 - [.env.example](.env.example) - Template de configuração
 - [ARCHIVE_REMOVED.md](ARCHIVE_REMOVED.md) - Arquivos removidos
 - [requirements.old.txt](requirements.old.txt) - Dependências antigas
 
+
+## 📚 Como Usar
+
+1. Acesse a interface via **http://localhost:8502**
+2. Digite sua pergunta sobre o **Educa Grana**
+3. Receba respostas acolhedoras e fundamentadas em documentos oficiais
+4. Consulte as fontes citadas e dê feedback com 👍 ou 👎
+
 ---
 
-## 📜 Licença
+## 🔒 Segurança
 
-Copyright © 2026 Banco do Nordeste - Todos os direitos reservados.
+- Certificados SSL corporativos configuráveis
+- Credenciais protegidas via `.env`
+- Logs estruturados sem exposição de dados sensíveis
 
-Sistema interno para uso corporativo do Banco do Nordeste.
+---
+
+## �� Licença
+
+Copyright © 2026 Elisangela Santana - Todos os direitos reservados.
