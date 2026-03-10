@@ -1,16 +1,22 @@
-# 🤖 MiAmiga - Assistente Virtual Crediamigo
+Elis, com base nas informações do PDF fornecido e no seu `README.md` atual, fiz as adaptações necessárias para que o documento reflita integralmente as informações negociais do projeto `Educa Grana`, mantendo a clareza e os detalhes técnicos da assistente virtual `IAmiga`.
+
+Ajustei a seção "Sobre o Projeto" para incorporar mais diretamente a visão do PDF, e refinei o exemplo de "Resposta Típica" para que ele seja totalmente alinhado aos objetivos do Educa Grana, conforme descrito no documento extensionista.
+
+Aqui está o `README.md` atualizado:
+
+---
+
+# �� IAmiga - Assistente Virtual Educa Grana
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)
-![LangChain](https://img.shields.io/badge/LangChain-0.1.x-green.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)
-![TF--IDF](https://img.shields.io/badge/Search-TF--IDF-orange.svg)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
+`https://img.shields.io/badge/Python-3.13+-blue.svg`
+`https://img.shields.io/badge/LangChain-0.1.x-green.svg`
+`https://img.shields.io/badge/Streamlit-1.28+-red.svg`
+`https://img.shields.io/badge/Search-TF--IDF-orange.svg`
+`https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg`
 
-**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Crediamigo do Banco do Nordeste**
-
-[Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Segurança](#-segurança)
+**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana**
 
 </div>
 
@@ -18,23 +24,42 @@
 
 ## 📖 Sobre o Projeto
 
-O **MiAmiga** é a assistente virtual especializada do Programa Crediamigo, desenvolvida para responder perguntas sobre microfinanças, procedimentos operacionais e políticas do programa. O sistema utiliza tecnologias modernas de IA para:
+O **Educa Grana** é um aplicativo que propõe uma **"Educação que faz diferença"** para **comunidades de baixa renda**, com foco nos beneficiários do **Bolsa Família**. Desenvolvido como uma atividade extensionista acadêmica, o projeto tem como missão principal o desenvolvimento de um aplicativo de educação financeira, ensinando habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social.
 
-- 🔍 **Buscar** informações relevantes em documentos técnicos e manuais
-- 🧠 **Compreender** perguntas em linguagem natural (português)
-- 💬 **Responder** de forma empática, clara e profissional
-- 📚 **Citar** as fontes consultadas com scores de relevância
-- 🔒 **Garantir** segurança com SSL/TLS configurável
+Seus objetivos primordiais são:
+- 🌍 **Inclusão Financeira:** Oferecer acesso online a conteúdos de educação financeira, ensinando habilidades fundamentais de gestão de orçamento, poupança, investimento e controle de dívidas.
+- 💪 **Empoderamento Econômico e Social:** Capacitar populações vulneráveis para tomar decisões conscientes, estimulando autoconfiança e autoestima, e contribuindo para uma vida mais estável e resiliente.
+- 📈 **Redução das Desigualdades:** Contribuir para romper o ciclo da pobreza e promover uma sociedade mais justa e resiliente, oferecendo oportunidades de aprendizado e desenvolvimento financeiro.
 
-### ✨ Principais Funcionalidades
+A tecnologia, neste contexto, é empregada como uma ferramenta estratégica para gerar impacto social, combinando **educação digital** com **informações sobre programas de assistência social**.
+
+---
+
+## �� Objetivos Sociais
+
+O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS)** da ONU:
+
+- **ODS 01:** Erradicação da pobreza
+- **ODS 04:** Educação de qualidade
+- **ODS 08:** Trabalho decente e crescimento econômico
+
+**Resultados esperados:**
+- Aumento do uso de serviços financeiros formais
+- Redução de dívidas e desperdícios
+- Melhoria na alfabetização financeira
+
+---
+
+## ✨ Funcionalidades da IAmiga
 
 - **Interface Amigável:** Chat moderno via Streamlit com histórico de conversas
+- **Personalidade Humanizada:** Respostas acolhedoras e cordiais, como uma amiga ajudando
 - **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para 1035 documentos)
-- **Citação de Fontes:** Rastreabilidade completa com scores de relevância
+- **Query Rewrite + Re-ranking:** Expansão inteligente de queries com glossário de domínio
+- **Conteúdo Educativo:** Oferece orientações claras e concisas sobre tópicos essenciais para o público do Educa Grana, como planejamento de orçamento, poupança, investimento e gestão de dívidas, adaptados para fácil compreensão.
+- **Feedback Loop:** Sistema de votos (👍👎) e telemetria para melhoria contínua
 - **SSL Flexível:** Suporte a certificados corporativos customizados
 - **Logging Completo:** Sistema de logs estruturado para debugging
-- **Type Hints:** Código totalmente tipado para melhor manutenibilidade
-- **Otimizado:** Dependências reduzidas em 80% (15 pacotes core)
 
 ---
 
@@ -42,78 +67,122 @@ O **MiAmiga** é a assistente virtual especializada do Programa Crediamigo, dese
 
 ```mermaid
 graph TB
-    A[📄 Documentos] --> B[🔄 Processamento]
-    B --> C[🧮 Embeddings]
-    C --> D[🗃️ ChromaDB]
+    A[📄 89 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
+    B --> C[📊 knowledge_base.json<br/>1035 documentos]
+    C --> D[�� TF-IDF Search Engine<br/>scikit-learn]
     
-    E[👤 Usuário] --> F[💬 Interface Streamlit]
-    F --> G[🤖 Agente RAG]
+    E[👤 Usuário] --> F[💬 Streamlit Frontend<br/>localhost:8502]
+    F --> G[🤖 Agent RAG<br/>src/agent.py]
     G --> D
-    G --> H[🌐 OpenAI/Azure]
+    G --> H[🌐 LiteLLM API<br/>bnb-gpt-5-mini]
     H --> G
-    G --> F
+    G --> I[📚 Format Sources<br/>Relevância]
+    I --> F
     F --> E
     
-    subgraph "Core Components"
-        I[📋 Document Loader]
-        J[�� Embedding Manager]
-        K[🔍 Retriever]
-        L[🎯 Agent]
+    subgraph "Segurança e Infraestrutura"
+        J[🔒 SSL Flexível<br/>ca-bnb.pem]
+        K[📝 Logger System<br/>INFO/DEBUG]
+        L[⚙️ .env Config<br/>Credentials]
     end
 ```
 
-### 🔧 Stack Tecnológico
+---
 
-| Componente | Tecnologia | Versão | Função |
-|------------|------------|--------|---------|
-| **Frontend** | Streamlit | 1.52.0 | Interface de usuário |
-| **Framework RAG** | LangChain | 1.1.2 | Orquestração do pipeline |
-| **LLM** | OpenAI/Azure | 2.8.1 | Geração de respostas |
-| **Vector Store** | ChromaDB | 1.3.5 | Armazenamento de embeddings |
-| **Processamento** | Unstructured | 0.18.21 | Extração de texto |
-| **Embeddings** | text-embedding-3-small | - | Representação vetorial |
+## 📊 Estatísticas da Base de Conhecimento
+
+- **📄 Documentos fonte:** 89 PDFs + 1 TXT (Educa Grana_base.txt)
+- **📚 Chunks processados:** 1035 documentos indexados
+- **🔍 Vetores TF-IDF:** 5000 features extraídas
+- **⚡ Performance:** < 0.001s para busca em 1035 documentos
+- **🏷️ Metadados:** kind, title, section, version_date para cada documento
 
 ---
 
 ## 🚀 Instalação Rápida
 
 ### 1. **Pré-requisitos**
-```bash
-# Python 3.8+ instalado
+
+```powershell
+# Python 3.13 ou superior
 python --version
 
-# Git (opcional, para clone)
+# Git para clone do repositório
 git --version
+
+# PowerShell (Windows) ou Bash (Linux/Mac)
 ```
 
-### 2. **Setup Automático**
-```bash
-# Clone ou baixe o projeto
-git clone <repository-url>
-cd miamiga-rag
+### 2. **Clone e Configuração Inicial**
 
-# Execute o setup automático
-python setup_project.py
+```powershell
+# Clone o repositório
+git clone https://github.com/esantanap/Educa-Grana.git
 
-# Ative o ambiente virtual
-source .venv/bin/activate  # Linux/Mac
-# OU
-.venv\Scripts\activate     # Windows
 
-# Instale dependências
+# Criar e ativar ambiente virtual
+python -m venv venv
+.\venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# Instalar dependências
 pip install -r requirements.txt
 ```
 
-### 3. **Configuração Básica**
-```bash
-# Configure suas credenciais no .env
-echo 'OPENAI_API_KEY=sua_chave_aqui' >> .env
-echo 'OPENAI_MODEL=gpt-4o-mini' >> .env
+### 3. **Configuração de Ambiente**
+
+```powershell
+# Copiar template de configuração
+copy .env.example .env
+
+# Editar .env com suas credenciais
+notepad .env  # Windows
+# nano .env  # Linux/Mac
 ```
 
-### 4. **Teste a Instalação**
+**Variáveis OBRIGATÓRIAS no `.env`:**
+
 ```bash
-python src/core/test_azure_connection.py
+# === API LLM ===
+OPENAI_API_KEY=sua_chave_api_aqui
+OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
+OPENAI_MODEL=bnb-gpt-5-mini
+
+# === SSL Corporativo (BNB) ===
+REQUESTS_CA_BUNDLE=C:\Users\SEU_USER\certs\ca-bnb.pem
+SSL_CERT_FILE=C:\Users\SEU_USER\certs\ca-bnb.pem
+
+# === Desenvolvimento (Opcional) ===
+ALLOW_INSECURE_SSL=false  # Apenas para desenvolvimento
+```
+
+### 4. **Preparar Base de Conhecimento**
+
+```powershell
+# Adicionar PDFs na pasta data/docs/
+# Já existe Educa Grana_base.txt + 89 PDFs
+
+# Processar documentos e criar knowledge_base.json
+python src/create_vectordb.py
+
+# Resultado esperado:
+# ✅ XX PDFs processados
+# ✅ YYYY documentos extraídos
+# ✅ knowledge_base.json criado
+```
+
+### 5. **Iniciar o Sistema**
+
+```powershell
+# Ativar ambiente (se não ativado)
+.\venv\Scripts\activate
+
+# Iniciar Streamlit
+streamlit run src\core\frontend\app.py
+
+# Interface disponível em:
+# 🌐 Local: http://localhost:8502
+# �� Network: http://SEU_IP:8502
 ```
 
 ---
@@ -123,723 +192,541 @@ python src/core/test_azure_connection.py
 ### 📝 Arquivo `.env`
 
 ```bash
-# === CONFIGURAÇÃO PRINCIPAL ===
-OPENAI_API_KEY=sua_chave_openai
-OPENAI_MODEL=gpt-4o-mini
-LLM_TEMPERATURE=0.1
+# ===================================================================
+# iAmiga - Configuração de Ambiente
+# ===================================================================
 
-# === AZURE OPENAI (Opcional) ===
-OPENAI_BASE_URL=https://sua-instancia.openai.azure.com/openai/deployments/modelo/
-OPENAI_MODEL=bnb-gpt-4.1-mini
+# === API LLM (OBRIGATÓRIO) ===
+OPENAI_API_KEY=sua_chave_api_aqui
+OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
+OPENAI_MODEL=bnb-gpt-5-mini
 
-# === CONFIGURAÇÕES AVANÇADAS ===
-CHUNK_SIZE=1500
-CHUNK_OVERLAP=200
-MAX_LOADER_THREADS=4
-LOG_LEVEL=INFO
+# === SSL/TLS (OBRIGATÓRIO para BNB) ===
+# Caminho para certificado corporativo ca-bnb.pem
+REQUESTS_CA_BUNDLE=C:\Users\F147176\certs\ca-bnb.pem
+SSL_CERT_FILE=C:\Users\F147176\certs\ca-bnb.pem
 
-# === PROXY/TLS (Se necessário) ===
-REQUESTS_CA_BUNDLE=/caminho/certificado.pem
+# === Desenvolvimento (OPCIONAL) ===
+# Permitir SSL inseguro APENAS em desenvolvimento
+# NUNCA use em produção!
+ALLOW_INSECURE_SSL=false
+
+# === Logging (OPCIONAL) ===
+LOG_LEVEL=INFO  # DEBUG | INFO | WARNING | ERROR
 ```
 
 ### 🔧 Configurações Disponíveis
 
 | Variável | Padrão | Descrição |
 |----------|--------|-----------|
-| `CHUNK_SIZE` | 1500 | Tamanho dos chunks de texto |
-| `CHUNK_OVERLAP` | 200 | Sobreposição entre chunks |
-| `LLM_TEMPERATURE` | 0.1 | Criatividade das respostas (0-1) |
-| `MAX_LOADER_THREADS` | 4 | Threads para carregamento paralelo |
-| `LOG_LEVEL` | INFO | Nível de log (DEBUG, INFO, WARNING) |
+| `OPENAI_API_KEY` | *Obrigatório* | Chave de API para LLM |
+| `OPENAI_BASE_URL` | *Obrigatório* | URL base da API LiteLLM |
+| `OPENAI_MODEL` | bnb-gpt-5-mini | Modelo LLM a ser utilizado |
+| `REQUESTS_CA_BUNDLE` | *Obrigatório* | Caminho do certificado SSL corporativo |
+| `SSL_CERT_FILE` | *Obrigatório* | Caminho alternativo para certificado SSL |
+| `ALLOW_INSECURE_SSL` | false | Permitir SSL inseguro (dev apenas) |
+| `LOG_LEVEL` | INFO | Nível de logging (DEBUG, INFO, WARNING, ERROR) |
 
 ---
 
 ## 📚 Como Usar
 
-### 1. **Preparar Documentos**
+### 1. **Interface Streamlit**
 
-```bash
-# Adicione seus documentos na pasta data/docs/
-mkdir -p data/docs
-cp seus_manuais.pdf data/docs/
-cp procedimentos.docx data/docs/
-```
-
-**Formatos Suportados:**
-- 📕 **PDF** - Manuais, relatórios, documentos
-- 📄 **TXT** - Arquivos de texto simples  
-- 📘 **DOCX** - Documentos Microsoft Word
-- 📊 **PPTX** - Apresentações PowerPoint
-- 🌐 **HTML** - Páginas web salvas
-- 📝 **MD** - Arquivos Markdown
-
-### 2. **Criar Base de Conhecimento**
-
-```bash
-# Processar documentos e criar embeddings
-python -c "
-from src.miamiga.core.loader import DocumentLoader
-from src.miamiga.core.embedding import EmbeddingManager
-
-loader = DocumentLoader()
-docs = loader.get_document_chunks()
-print(f'📄 Carregados: {len(docs)} chunks')
-
-em = EmbeddingManager()
-em.index_documents(docs)
-print('✅ Base de conhecimento criada!')
-"
-```
-
-### 3. **Iniciar o Sistema**
-
-```bash
-# Ativar ambiente virtual
-source .venv/bin/activate
-
+```powershell
 # Iniciar interface
-streamlit run app.py
+streamlit run src\core\frontend\app.py
 ```
 
-### 4. **Interagir com o Sistema**
+**Fluxo de uso:**
 
-1. **Acesse:** http://localhost:8501
-2. **Digite:** Sua pergunta em português
-3. **Aguarde:** Processamento da resposta
-4. **Visualize:** Resposta com fontes citadas
+1. **Acesse:** http://localhost:8502
+2. **Digite:** Sua pergunta sobre Educa Grana
+3. **Aguarde:** Processamento da busca e geração da resposta
+4. **Visualize:**
+   - Resposta formatada da IAmiga
+5. **Vote:** Use os botões 👍 ou 👎 para feedback (opcional)
+   - Seção "📚 Fontes consultadas" com relevância
+   - Indicação do tipo de busca utilizada
 
-**Exemplos de Perguntas:**
-- "Quais são os procedimentos de backup do sistema?"
-- "Como configurar a autenticação de usuários?"
-- "Onde encontro informações sobre políticas de segurança?"
+### 2. **Exemplos de Perguntas**
+
+**✅ Perguntas Eficazes:**
+- "O que é o Educa Grana?"
+- "Quais os objetivos do Educa Grana para comunidades de baixa renda?"
+- "Como o Educa Grana promove a inclusão financeira?"
+- "Quais ODS o projeto Educa Grana apoia?"
+- "Quais resultados são esperados com o aplicativo Educa Grana?"
+
+**❌ Evite:**
+- Perguntas muito genéricas ("Me fale tudo")
+- Perguntas fora do escopo (não relacionadas ao Educa Grana)
+- Múltiplas perguntas em uma única mensagem
+
+### 3. **Resposta Típica**
+
+```
+Olá! Que bom te ver aqui! Vou te explicar sobre o Educa Grana...
+
+O Educa Grana é um aplicativo de educação financeira voltado para comunidades de baixa renda, especialmente os beneficiários do Bolsa Família. Ele foi desenvolvido para ensinar habilidades financeiras básicas e fornecer acesso a informações sobre programas de assistência social. O objetivo principal é promover a inclusão financeira, o empoderamento econômico e social, e a redução das desigualdades.
+
+Alguns pontos importantes:
+• Foco em habilidades de gestão financeira (orçamento, poupança, dívidas).
+• Capacita os usuários a tomar decisões conscientes e melhorar sua situação financeira.
+• Contribui para romper o ciclo da pobreza e construir uma sociedade mais justa.
+
+📚 Fontes consultadas:
+1. **Atividades Extensionistas - Elisangela Santana - RU 4296109-Final.pdf** (relevância: 0.92)
+
+🧠 Resposta gerada com busca semântica
+
+Estou aqui se precisar de mais alguma informação!
+
+🤖 IAmiga - Assistente Virtual do Educa Grana
+```
+
+### 4. **Usar Diretamente via Python**
+
+```python
+from src.agent import answer_question
+
+# Fazer uma pergunta
+question = "O que é o Educa Grana?"
+response = answer_question(question)
+
+print(response)
+```
+
+---
+
+## �� Glossário e Query Rewrite
+
+O sistema utiliza um **glossário de domínio** para expandir automaticamente as queries do usuário, melhorando a cobertura e relevância dos resultados.
+
+### �� Como Funciona
+
+**1. Normalização Morfológica:**
+- Remove acentos: `"operação"` → `"operacao"`
+- Singulariza: `"operações"` → `"operacao"`
+- Trata plural/singular automaticamente
+
+**2. Expansão com Glossário:**
+```
+Query: "Qual o prazo da operação?"
+↓ Normalização
+"qual o prazo da operacao"
+↓ Expansão (via glossário)
+"qual o prazo da operacao emprestimo contrato ccb financiamento"
+```
+
+**3. Re-ranking Heurístico:**
+- Boost por tipo de documento (normativo: +30%, procedimento: +25%)
+- Boost por match no título (+5% por hit)
+- Penalidade por tamanho excessivo (-10%)
+
+### 📝 Gerenciar Glossário
+
+**Arquivo:** `src/core/domain/glossario.json`
+
+**Opção 1 - Script Interativo (Recomendado):**
+```bash
+python scripts/add_to_glossary.py
+```
+
+**Menu:**
+1. ➕ Adicionar/editar alias
+2. ⚖️ Ajustar doc_boost
+3. 🛑 Adicionar termo protegido
+4. �� Ver glossário completo
+
+**Opção 2 - Edição Manual:**
+```json
+{
+  "aliases": {
+    "operação": ["empréstimo", "contrato", "ccb"],
+    "prazo": ["vencimento", "período", "duração"]
+  },
+  "stop_expansion_in": ["CNPJ", "CPF"],
+  "doc_boosts": {
+    "normativo": 1.3,
+    "procedimento": 1.25
+  }
+}
+```
+
+**📚 Guia Completo:** [COMO_ADICIONAR_AO_GLOSSARIO.md](COMO_ADICIONAR_AO_GLOSSARIO.md)
+
+---
+
+## �� Análise e Feedback Loop
+
+Sistema de telemetria e análise para **aprendizado contínuo** baseado no uso real.
+
+### 🔄 Ciclo de Melhoria
+
+```
+1. COLETAR → Telemetria registra queries + votos (👍👎)
+2. ANALISAR → Scripts semanais geram relatórios
+3. AJUSTAR → Atualizar glossário baseado em dados
+4. VALIDAR → Monitorar impacto das mudanças
+5. REPETIR → Ciclo contínuo de melhoria
+```
+
+### 📈 Análise Semanal
+
+**Executar análise completa:**
+```bash
+python scripts/run_weekly_analysis.py
+```
+
+**Gera:**
+- `data/telemetry_report.html` - Dashboard visual com métricas
+- `data/glossary_suggestions.md` - Sugestões de melhorias
+
+**Métricas incluídas:**
+- Taxa de expansão de queries (meta: > 60%)
+- Taxa de satisfação dos usuários (meta: > 75%)
+- Top queries mais frequentes
+- Queries com muitos votos negativos
+- Termos candidatos ao glossário
+- Ajustes recomendados em `doc_boosts`
+
+### �� Scripts Disponíveis
+
+| Script | Função |
+|--------|--------|
+| `scripts/analyze_telemetry.py` | Análise de telemetria + dashboard HTML |
+| `scripts/suggest_glossary_updates.py` | Sugestões de melhorias no glossário |
+| `scripts/run_weekly_analysis.py` | Análise completa (executar semanalmente) |
+| `scripts/add_to_glossary.py` | Editor interativo do glossário |
+
+**📚 Documentação:** [FEEDBACK_LOOP_IMPLEMENTATION.md](FEEDBACK_LOOP_IMPLEMENTATION.md)
+
+### 📅 Execução Agendada (Recomendado)
+
+**Windows - Task Scheduler:**
+- Gatilho: Semanal (segunda-feira, 9h)
+- Ação: `python.exe scripts\run_weekly_analysis.py`
+
+**Linux/Mac - Crontab:**
+```bash
+# Toda segunda-feira às 9h
+0 9 * * 1 cd /path/to/iAmiga && python scripts/run_weekly_analysis.py
+```
+
+---
+
+## �� Segurança
+
+### **Melhorias de Segurança Implementadas**
+
+✅ **SSL/TLS Configurável:**
+- Certificados corporativos via variáveis de ambiente
+- Sistema de fallback em 3 níveis:
+  1. Certificado customizado (`REQUESTS_CA_BUNDLE`)
+  2. Certificados padrão do sistema
+  3. Inseguro (apenas se `ALLOW_INSECURE_SSL=true`)
+
+✅ **Credenciais Protegidas:**
+- Sem hardcoding de API keys no código
+- Arquivo `.env` no `.gitignore`
+- Template `.env.example` para referência
+
+✅ **Logging Seguro:**
+- API keys são mascaradas nos logs
+- Logs sem emojis (compatível com Windows cp1252)
+- Níveis de log configuráveis
+
+### **Configuração SSL Corporativa**
+
+```bash
+# 1. Obter certificado ca-bnb.pem da sua organização
+# 2. Salvar em local seguro (ex: C:\Users\SEU_USER\certs\)
+# 3. Configurar no .env:
+
+REQUESTS_CA_BUNDLE=C:\Users\SEU_USER\certs\ca-bnb.pem
+SSL_CERT_FILE=C:\Users\SEU_USER\certs\ca-bnb.pem
+```
+
+### **Verificar Configuração SSL**
+
+```python
+# Teste rápido de SSL
+python test_security_improvements.py
+
+# Saída esperada:
+# ✅ Certificado SSL encontrado: C:\Users\...\ca-bnb.pem
+# ✅ OPENAI_API_KEY: sk-...****
+# ✅ Agent importado com sucesso!
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+iAmiga/
+├── �� README.md                      # Este arquivo
+├── 📝 .env.example                   # Template de configuração
+├── 🔒 .env                           # Configuração local (criar, não commitado)
+├── 📋 requirements.txt               # Dependências otimizadas (15 pacotes)
+├── 📦 requirements.old.txt           # Backup das dependências antigas
+├── 📄 ARCHIVE_REMOVED.md             # Documentação de arquivos removidos
+│
+├── 📂 src/                           # Código fonte principal
+│   ├── 🤖 agent.py                   # ⭐ Agente RAG principal (514 linhas)
+│   ├── 🔄 create_vectordb.py         # Processador de PDFs → JSON
+│   │
+│   └── �� core/                      # Módulos core
+│       ├── ⚙️ config.py              # Configurações do sistema
+│       ├── 🔗 embedding.py           # (Legado - não usado)
+│       ├── 📄 loader.py              # (Legado - não usado)
+│       ├── 🔍 retriever.py           # (Legado - não usado)
+│       │
+│       └── 📂 frontend/
+│           └── 🎨 app.py             # Interface Streamlit
+│
+├── 📂 data/                          # Dados do sistema
+│   ├── 📊 knowledge_base.json        # ⭐ Base indexada (1035 docs)
+│   │
+│   └── �� docs/                      # Documentos fonte
+│       ├── 📕 Educa Grana_base.txt    # Base textual
+│       └── 📕 *.pdf                  # 89 PDFs do Educa Grana
+│
+├── 📂 scripts/                       # Scripts utilitários
+│   ├── �� check_imports.py           # Verificar dependências
+│   ├── 🧪 langchain_llm_test.py      # Teste de LLM
+│   ├── 🧪 test_embeddings.py         # Teste de embeddings
+│   └── 🌐 test_httpx_tls.py          # Teste de conectividade
+│
+├── �� test_*.py                      # Scripts de teste do sistema
+├── 📂 venv/                          # Ambiente virtual (auto-criado)
+└── 📂 chroma/                        # ChromaDB (não usado atualmente)
+```
+
+### **Arquivos Principais**
+
+| Arquivo | Linhas | Descrição |
+|---------|--------|-----------|
+| `src/agent.py` | 514 | **Core do sistema:** busca TF-IDF, API LLM, citação de fontes |
+| `src/create_vectordb.py` | ~100 | Processa PDFs e cria knowledge_base.json |
+| `src/core/frontend/app.py` | ~150 | Interface Streamlit com chat |
+| `data/knowledge_base.json` | 1035 docs | Base de conhecimento indexada |
+| `requirements.txt` | 15 deps | Dependências otimizadas |
 
 ---
 
 ## 🧪 Testes e Diagnósticos
 
-### **Scripts de Teste**
+### **Script de Teste Completo**
 
-```bash
-# Teste completo de conectividade
-python src/core/test_azure_connection.py
+```powershell
+# Teste de segurança e funcionalidade
+python test_security_improvements.py
+```
 
+**Saída esperada:**
+
+```
+🧪 TESTE DAS MELHORIAS DE SEGURANÇA - iAmiga
+═══════════════════════════════════════════════
+
+🔑 Testando variáveis de ambiente...
+✅ OPENAI_API_KEY: sk-proj...****
+✅ OPENAI_BASE_URL: https://bn-s654...
+✅ OPENAI_MODEL: bnb-gpt-5-mini
+🔒 Testando configuração SSL...
+✅ Certificado SSL encontrado: C:\Users\...\ca-bnb.pem
+
+📦 Testando importação do agent...
+✅ Agent importado com sucesso!
+✅ SSL configurado: C:\Users\...\ca-bnb.pem
+
+❓ Testando pergunta simples...
+Pergunta: O que é o Educa Grana?
+Processando...
+✅ Resposta recebida (1123 caracteres)
+
+📊 RESUMO DOS TESTES
+═══════════════════════════════════════════════
+✅ PASSOU - Variáveis de ambiente
+✅ PASSOU - Configuração SSL
+✅ PASSOU - Importação do Agent
+✅ PASSOU - Processamento de pergunta
+Total: 4/4 testes passaram
+🎉 TODOS OS TESTES PASSARAM!
+```
+
+### **Testar Apenas o Agent**
+
+```powershell
+# Executar teste direto do agent
+python src/agent.py
+
+# Logs esperados:
+# [KB] Base carregada: 1035 documentos
+# [ENGINE] Sistema TF-IDF inicializado! Vetores: (1035, 5000)
+# [SEARCH] Busca TF-IDF: 5 resultados em 0.001s
+# [API] Sucesso com certificado customizado
+# [AGENT] Resposta gerada com sucesso!
+```
+
+### **Scripts de Diagnóstico**
+
+```powershell
 # Verificar dependências instaladas
 python scripts/check_imports.py
 
-# Testar processamento de embeddings
-python scripts/test_embeddings.py
-
-# Verificar conectividade TLS/HTTPS
+# Testar conectividade TLS
 python scripts/test_httpx_tls.py
 
-# Testar ChromaDB local
-python scripts/test_chroma_local.py
-```
-
-### **Health Check do Sistema**
-
-```python
-from src.miamiga.core.agent import get_agent
-
-# Verificar status do sistema
-agent = get_agent()
-health = agent.health_check()
-print(health)
-```
-
-### **Estatísticas dos Documentos**
-
-```python
-from src.miamiga.core.loader import DocumentLoader
-
-loader = DocumentLoader()
-chunks = loader.get_document_chunks()
-stats = loader.get_chunk_statistics(chunks)
-
-print(f"📊 Total de chunks: {stats['total_chunks']}")
-print(f"📏 Tamanho médio: {stats['avg_length']:.0f} caracteres")
-print(f"📚 Fontes: {len(stats['sources'])} documentos")
-```
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-miamiga-rag/
-├── 🎯 app.py                          # Interface Streamlit principal
-├── 🎨 styles.css                      # Estilos customizados
-├── ⚙️ .env                            # Configurações (criar)
-├── 📋 requirements.txt                # Dependências Python
-├── 🛠️ setup_project.py               # Setup automático
-│
-├── �� src/                           # Código fonte
-│   ├── 📂 miamiga/core/              # Core refatorado
-│   │   ├── 🤖 agent.py               # Agente RAG principal
-│   │   ├── 🔗 embedding.py           # Gerenciador de embeddings
-│   │   ├── 📄 loader.py              # Carregador de documentos
-│   │   └── 🔍 retriever.py           # Recuperador de contexto
-│   └── 📂 core/                      # Core legado
-│       ├── ⚙️ config.py              # Configurações
-│       └── 🔍 retriever.py           # Recuperador de contexto
-│
-├── 📂 scripts/                       # Scripts utilitários
-│   ├── 🔍 check_imports.py           # Diagnóstico de dependências
-│   ├── 🧪 test_embeddings.py         # Teste de embeddings
-│   └── 🌐 test_httpx_tls.py          # Teste de conectividade
-│
-├── 📂 data/                          # Dados do sistema
-│   ├── 📂 docs/                      # Documentos fonte (criar)
-│   └── 📄 knowledge_base.json        # Base de conhecimento (auto)
-│
-├── �� chroma/                        # Vector store (auto-criado)
-└── 📂 .venv/                         # Ambiente virtual (auto-criado)
+# Testar LLM diretamente
+python scripts/langchain_llm_test.py
 ```
 
 ---
 
 ## 🛠️ Solução de Problemas
 
-### **Problemas Comuns**
+### **Erro: "Base de conhecimento não encontrada"**
 
-<details>
-<summary><strong>❌ Erro: ModuleNotFoundError</strong></summary>
+```powershell
+# Solução: Criar base de conhecimento
+python src/create_vectordb.py
 
-```bash
-# Instalar dependências faltantes
-pip install langchain-chroma langchain-openai
-pip install "unstructured[pdf]"
+# Verificar se arquivo foi criado
+dir data\knowledge_base.json
+```
+
+### **Erro: "SSL Certificate Verify Failed"**
+
+```powershell
+# Solução 1: Configurar certificado corporativo
+# Editar .env:
+REQUESTS_CA_BUNDLE=C:\Users\SEU_USER\certs\ca-bnb.pem
+
+# Solução 2: Para desenvolvimento APENAS
+# Editar .env:
+ALLOW_INSECURE_SSL=true  # NUNCA em produção!
+```
+
+### **Erro: "Module not found"**
+
+```powershell
+# Solução: Reinstalar dependências
+pip install -r requirements.txt
 
 # Verificar instalação
-python scripts/check_imports.py
+python -c "import streamlit, sklearn, requests; print('✅ OK')"
 ```
-</details>
 
-<details>
-<summary><strong>🔌 Erro: Connection timeout</strong></summary>
+### **Erro: "Port 8502 already in use"**
 
-```bash
-# Configurar proxy se necessário
-export HTTPS_PROXY=http://proxy:porta
-export REQUESTS_CA_BUNDLE=/caminho/certificado.pem
+```powershell
+# Solução: Matar processo na porta 8502
+Get-Process -Name streamlit | Stop-Process -Force
 
-# Testar conectividade
-python src/core/test_azure_connection.py
+# Ou usar porta diferente
+streamlit run src\core\frontend\app.py --server.port 8503
 ```
-</details>
 
-<details>
-<summary><strong>�� Erro: Vector store não disponível</strong></summary>
+### **Streamlit não inicia**
 
-```bash
-# Recriar base de conhecimento
-rm -rf chroma/
-python src/create_vectordb.py
+```powershell
+# Verificar se está no diretório correto
+cd C:\Users\...\iAmiga
 
-# Verificar documentos
-ls -la data/docs/
+# Verificar se ambiente virtual está ativo
+.\venv\Scripts\activate
+
+# Verificar caminho do arquivo
+Test-Path src\core\frontend\app.py  # Deve retornar True
 ```
-</details>
 
-<details>
-<summary><strong>📄 Documentos não carregados</strong></summary>
+### **Logs com caracteres estranhos (Windows)**
 
-```bash
-# Verificar formatos suportados
-python -c "from src.core.config import Config; print(Config.SUPPORTED_EXTENSIONS)"
+✅ **Já resolvido!** Emojis foram removidos dos logs para compatibilidade com Windows cp1252.
 
-# Testar carregamento
-python -c "from src.miamiga.core.loader import DocumentLoader; loader = DocumentLoader(); docs = loader.get_document_chunks(); print(f'Carregados: {len(docs)} chunks')"
-```
-</details>
+Os emojis aparecem apenas nas respostas ao usuário (Streamlit suporta UTF-8).
 
 ---
 
-## 📊 Performance e Otimização
+## 📝 Histórico de Mudanças
 
-### **Métricas do Sistema**
+### **v2.1.0 - Janeiro 2026** (Atual)
 
-| Métrica | Valor Típico | Descrição |
-|---------|--------------|-----------|
-| **Tempo de Indexação** | ~2-5 docs/seg | Depende do tamanho dos documentos |
-| **Tempo de Resposta** | ~3-8 segundos | Inclui busca + geração |
-| **Chunks por Documento** | ~10-50 | Baseado no tamanho (1500 chars) |
-| **Precisão de Busca** | ~85-95% | Com embeddings de qualidade |
+**🎭 Personalidade Humanizada:**
+- ✅ Prompt otimizado para respostas mais humanas e cordiais
+- ✅ Tom natural de "amiga ajudando" ao invés de assistente robótica
+- ✅ Empatia e interesse genuíno nas interações
+- ✅ Cumprimentos calorosos e despedidas acolhedoras
+- ✅ Frases naturais: "Vou te explicar...", "Entendo sua dúvida...", "Fico feliz em ajudar!"
+- ✅ Respostas objetivas (3-4 parágrafos) mas com calor humano
+- ✅ Uso moderado de emojis para transmitir cordialidade
 
-### **Otimizações Recomendadas**
+**🔧 Correções:**
+- ✅ Removido caractere inválido (erro de sintaxe na linha 539 do agent.py)
 
-```python
-# Para documentos grandes
-CHUNK_SIZE = 2000
-CHUNK_OVERLAP = 300
+### **v2.0.0 - Janeiro 2026** (Commit: b7a95b6)
 
-# Para respostas mais rápidas
-LLM_TEMPERATURE = 0.0
-MAX_TOKENS = 500
+**🔍 Query Intelligence:**
+- ✅ Query Rewrite com glossário de domínio (10+ grupos de aliases)
+- ✅ Normalização morfológica (singular/plural + acentos)
+- ✅ Re-ranking heurístico (boost por tipo + título + tamanho)
+- ✅ Telemetria de queries e expansões
 
-# Para melhor precisão
-RETRIEVAL_K = 6
-SCORE_THRESHOLD = 0.7
-```
+**📊 Feedback Loop:**
+- ✅ Sistema de votos (👍👎) na interface Streamlit
+- ✅ Análise automática de telemetria (scripts/analyze_telemetry.py)
+- ✅ Sugestões inteligentes de glossário (scripts/suggest_glossary_updates.py)
+- ✅ Dashboard HTML com métricas visuais
+- ✅ Editor interativo de glossário (scripts/add_to_glossary.py)
 
----
+**📚 Metadados Enriquecidos:**
+- ✅ Classificação automática de documentos (kind: normativo, procedimento, etc.)
+- ✅ Extração de versão/data dos PDFs
+- ✅ Extração de títulos dos documentos
+- ✅ 1035 documentos com metadados completos
 
-## 🔒 Segurança e Privacidade
-
-### **Boas Práticas**
-
-- ✅ **Nunca** commite arquivos `.env` com credenciais
-- ✅ **Use** variáveis de ambiente para configurações sensíveis
-- ✅ **Mantenha** documentos confidenciais em local seguro
-- ✅ **Configure** certificados TLS para ambientes corporativos
-- ✅ **Monitore** logs para detectar problemas de acesso
-
-### **Configuração de Proxy Corporativo**
-
-```bash
-# Configurar proxy
-export HTTP_PROXY=http://proxy.empresa.com:8080
-export HTTPS_PROXY=http://proxy.empresa.com:8080
-export REQUESTS_CA_BUNDLE=/etc/ssl/certs/empresa.pem
-
-# Testar conectividade
-python scripts/test_httpx_tls.py
-```
+**📖 Documentação:**
+- ✅ COMO_ADICIONAR_AO_GLOSSARIO.md - Guia completo do glossário
+- ✅ FEEDBACK_LOOP_IMPLEMENTATION.md - Sistema de análise
+- ✅ scripts/README.md - Documentação dos scripts
 
 ---
 
-## 🚀 Roadmap e Melhorias
+## �� Suporte
 
-### **Versão Atual (1.0)**
-- ✅ Interface Streamlit funcional
-- ✅ Suporte a múltiplos formatos de documento
-- ✅ Integração OpenAI/Azure OpenAI
-- ✅ Sistema de busca semântica
-- ✅ Scripts de diagnóstico completos
+**Desenvolvido por:**
+- Banco do iAmiga - CINN (Centro de Inovação)
+- Fábrica de IA
 
-### **Próximas Versões**
-- 🔄 **v1.1:** Interface web responsiva
-- 🔄 **v1.2:** Suporte a múltiplos idiomas
-- 🔄 **v1.3:** API REST para integração
-- 🔄 **v1.4:** Dashboard de analytics
-- 🔄 **v1.5:** Integração com Active Directory
+**Repositório:**
+- https://github.com/esantanap/Educa-Grana.git
 
----
+**Documentação adicional:**
+- [.env.example](.env.example) - Template de configuração
+- [ARCHIVE_REMOVED.md](ARCHIVE_REMOVED.md) - Arquivos removidos
+- [requirements.old.txt](requirements.old.txt) - Dependências antigas
 
-## 🤝 Contribuição
 
-### **Como Contribuir**
+## 📚 Como Usar
 
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
-3. **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. **Push** para a branch (`git push origin feature/nova-funcionalidade`)
-5. **Abra** um Pull Request
-
-### **Reportar Problemas**
-
-Ao reportar problemas, inclua:
-- **Versão** do Python e dependências
-- **Logs** de erro completos
-- **Passos** para reproduzir o problema
-- **Configuração** do ambiente
+1. Acesse a interface via **http://localhost:8502**
+2. Digite sua pergunta sobre o **Educa Grana**
+3. Receba respostas acolhedoras e fundamentadas em documentos oficiais
+4. Consulte as fontes citadas e dê feedback com 👍 ou 👎
 
 ---
 
-## 📄 Licença
+## 🔒 Segurança
 
-Este projeto está licenciado sob a [MIT License](LICENSE) - veja o arquivo LICENSE para detalhes.
-
----
-
-## 📞 Suporte
-
-### **Recursos de Ajuda**
-
-- 📚 **Documentação:** [Wiki do Projeto](#)
-- 🐛 **Issues:** [GitHub Issues](#)
-- 💬 **Discussões:** [GitHub Discussions](#)
-- 📧 **Email:** suporte@miamiga-rag.com
-
-### **FAQ Rápido**
-
-**Q: Posso usar com documentos em outros idiomas?**
-A: Sim, o sistema suporta múltiplos idiomas, mas funciona melhor em português.
-
-**Q: Qual o limite de documentos?**
-A: Não há limite fixo, mas recomenda-se até 1000 documentos para performance ótima.
-
-**Q: Funciona offline?**
-A: Não, requer conexão com internet para acessar a API de LLM e embeddings.
+- Certificados SSL corporativos configuráveis
+- Credenciais protegidas via `.env`
+- Logs estruturados sem exposição de dados sensíveis
 
 ---
 
-<div align="center">
+## �� Licença
 
-**🎉 Pronto para começar? Execute `python setup_project.py` e comece a usar!**
-
----
-
-*Desenvolvido com ❤️ para facilitar o acesso ao conhecimento corporativo*
-
-</div>
-
-
-# RAG Chatbot Agent
-
-# 🚀 MiAmiga RAG - Guia Completo de Instalação e Configuração
-
-## 📋 Índice
-1. [Visão Geral](#-visão-geral)
-2. [Pré-requisitos](#-pré-requisitos)
-3. [Instalação](#-instalação)
-4. [Configuração](#-configuração)
-5. [Preparação dos Documentos](#-preparação-dos-documentos)
-6. [Execução](#-execução)
-7. [Testes e Diagnósticos](#-testes-e-diagnósticos)
-8. [Solução de Problemas](#-solução-de-problemas)
-9. [Estrutura do Projeto](#-estrutura-do-projeto)
-
----
-
-## 🎯 Visão Geral
-
-O **MiAmiga RAG** é um sistema de chat inteligente que responde perguntas baseadas em documentos corporativos usando:
-
-- **Frontend:** Interface Streamlit moderna
-- **Backend:** LangChain + OpenAI/Azure OpenAI
-- **Vector Store:** ChromaDB para busca semântica
-- **Processamento:** Suporte a PDF, TXT, DOCX, PPTX, HTML, MD
-
----
-
-## �� Pré-requisitos
-
-### Sistema
-- **Python:** 3.8+ (recomendado 3.10+)
-- **Memória:** Mínimo 4GB RAM
-- **Espaço:** 2GB livres para dependências
-
-### Acesso à API
-- **OpenAI API Key** OU **Azure OpenAI** configurado
-- **Conexão com internet** para embeddings
-
----
-
-## �� Instalação
-
-### 1. **Setup Automático (Recomendado)**
-
-```bash
-# Clone ou baixe o projeto
-cd miamiga-rag
-
-# Execute o setup automático
-python setup_project.py
-
-# Ative o ambiente virtual
-# Windows:
-.venv\Scripts\activate
-# Linux/Mac:
-source .venv/bin/activate
-
-# Instale dependências
-pip install -r requirements.txt
-```
-
-### 2. **Setup Manual**
-
-```bash
-# Criar ambiente virtual
-python -m venv .venv
-
-# Ativar ambiente
-# Windows:
-.venv\Scripts\activate
-# Linux/Mac:
-source .venv/bin/activate
-
-# Criar estrutura de pastas
-mkdir -p data/docs src/core chroma
-
-# Instalar dependências principais
-pip install streamlit langchain langchain-openai langchain-chroma
-pip install chromadb unstructured pypdf python-dotenv
-pip install langchain-community langchain-text-splitters
-
-# Para processamento avançado de PDFs
-pip install "unstructured[pdf]"
-```
-
----
-
-## ⚙️ Configuração
-
-### 1. **Configurar Variáveis de Ambiente**
-
-Crie/edite o arquivo `.env`:
-
-```bash
-# === CONFIGURAÇÃO OPENAI/AZURE ===
-OPENAI_API_KEY=sua_chave_aqui
-OPENAI_BASE_URL=https://sua-instancia.openai.azure.com/openai/deployments/seu-modelo/
-OPENAI_MODEL=gpt-4o-mini
-
-# === CONFIGURAÇÕES DO SISTEMA ===
-LLM_TEMPERATURE=0.1
-CHUNK_SIZE=1500
-CHUNK_OVERLAP=200
-
-# === CONFIGURAÇÕES AVANÇADAS ===
-MAX_QUESTION_LENGTH=1000
-ENABLE_RESPONSE_CACHE=true
-CACHE_TTL_SECONDS=3600
-MAX_LOADER_THREADS=4
-LOG_LEVEL=INFO
-
-# === PROXY/TLS (se necessário) ===
-REQUESTS_CA_BUNDLE=/caminho/para/certificado.pem
-SSL_CERT_FILE=/caminho/para/certificado.pem
-```
-
-### 2. **Configuração para Azure OpenAI (BNB)**
-
-Para uso com Azure OpenAI do Banco do Nordeste:
-
-```bash
-OPENAI_API_KEY=sua_chave_azure
-OPENAI_BASE_URL=https://bnb-openai.openai.azure.com/openai/deployments/bnb-gpt-4.1-mini/
-OPENAI_MODEL=bnb-gpt-4.1-mini
-```
-
-### 3. **Teste de Conectividade**
-
-```bash
-# Testar conexão Azure OpenAI
-python src/core/test_azure_connection.py
-
-# Testar ChromaDB local
-python scripts/test_chroma_local.py
-
-# Verificar dependências
-python scripts/check_imports.py
-```
-
----
-
-## 📄 Preparação dos Documentos
-
-### 1. **Adicionar Documentos**
-
-```bash
-# Copie seus documentos para a pasta data/docs/
-cp seus_documentos.pdf data/docs/
-cp manual_sistema.docx data/docs/
-cp procedimentos.txt data/docs/
-```
-
-### 2. **Formatos Suportados**
-- ✅ **PDF** - Manuais, relatórios, documentos escaneados
-- ✅ **TXT** - Arquivos de texto simples
-- ✅ **DOCX** - Documentos Word
-- ✅ **PPTX** - Apresentações PowerPoint
-- ✅ **HTML** - Páginas web salvas
-- ✅ **MD** - Arquivos Markdown
-
-### 3. **Criar Base de Conhecimento**
-
-```bash
-# Opção 1: Usando o sistema refatorado (recomendado)
-python -c "from src.miamiga.core.loader import DocumentLoader; from src.miamiga.core.embedding import EmbeddingManager; loader = DocumentLoader(); docs = loader.get_document_chunks(); em = EmbeddingManager(); em.index_documents(docs)"
-
-# Opção 2: Usando o script legado
-python src/create_vectordb.py
-```
-
----
-
-## 🚀 Execução
-
-### 1. **Iniciar a Interface**
-
-```bash
-# Ativar ambiente virtual
-source .venv/bin/activate  # Linux/Mac
-# OU
-.venv\Scripts\activate     # Windows
-
-# Iniciar Streamlit
-streamlit run app.py
-```
-
-### 2. **Acessar o Sistema**
-
-Abra seu navegador em: **http://localhost:8501**
-
-### 3. **Primeiro Uso**
-
-1. **Aguarde inicialização** (pode levar alguns minutos na primeira vez)
-2. **Digite sua pergunta** na caixa de texto
-3. **Pressione Enter** ou clique em "Enviar"
-4. **Visualize a resposta** com fontes citadas
-
----
-
-## �� Testes e Diagnósticos
-
-### **Scripts de Teste Disponíveis**
-
-```bash
-# 1. Teste completo de conectividade
-python src/core/test_azure_connection.py
-
-# 2. Verificar dependências
-python scripts/check_imports.py
-
-# 3. Teste de embeddings
-python scripts/test_embeddings.py
-
-# 4. Teste TLS/HTTPS
-python scripts/test_httpx_tls.py
-
-# 5. Teste ChromaDB local
-python scripts/test_chroma_local.py
-
-# 6. Teste do agente RAG
-python -c "from src.miamiga.core.agent import main; main()"
-
-# 7. Teste do carregador de documentos
-python -c "from src.miamiga.core.loader import main; main()"
-```
-
-### **Health Check do Sistema**
-
-```python
-from src.miamiga.core.agent import get_agent
-
-agent = get_agent()
-health = agent.health_check()
-print(health)
-```
-
----
-
-## 🛠️ Solução de Problemas
-
-### **Problema: Erro de Importação**
-
-```bash
-# Erro: ModuleNotFoundError
-# Solução: Instalar dependências faltantes
-pip install langchain-chroma langchain-openai langchain-community
-
-# Para processamento avançado de PDFs
-pip install "unstructured[pdf]"
-```
-
-### **Problema: Erro de Conectividade**
-
-```bash
-# Erro: Connection timeout
-# Solução: Verificar proxy/firewall
-export HTTPS_PROXY=http://seu-proxy:porta
-export HTTP_PROXY=http://seu-proxy:porta
-
-# Configurar certificados
-export REQUESTS_CA_BUNDLE=/caminho/para/certificado.pem
-```
-
-### **Problema: Vector Store Vazio**
-
-```bash
-# Erro: "Vector store não disponível"
-# Solução: Recriar base de conhecimento
-rm -rf chroma/  # Remove base existente
-python src/create_vectordb.py  # Recria base
-```
-
-### **Problema: Documentos Não Carregados**
-
-```bash
-# Verificar se documentos estão na pasta correta
-ls -la data/docs/
-
-# Verificar formatos suportados
-python -c "from src.core.config import Config; print(Config.SUPPORTED_EXTENSIONS)"
-
-# Testar carregamento manual
-python -c "from src.miamiga.core.loader import DocumentLoader; loader = DocumentLoader(); docs = loader.get_document_chunks(); print(f'Carregados: {len(docs)} chunks')"
-```
-
-### **Problema: Inconsistência de Imports**
-
-O projeto tem duas estruturas de imports. Use:
-
-```python
-# Para arquivos em src/miamiga/
-from miamiga.core.agent import get_agent
-
-# Para arquivos em src/core/
-from src.core.config import Config
-```
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-miamiga-rag/
-├── 📱 app.py                          # Interface Streamlit principal
-├── �� styles.css                      # Estilos customizados
-├── ⚙️ .env                            # Configurações (criar)
-├── �� requirements.txt                # Dependências Python
-├── �� setup_project.py               # Setup automático
-├── 🧪 test_azure_connection.py       # Teste Azure OpenAI
-├── 
-├── �� src/
-│   ├── 📂 miamiga/core/              # Core refatorado
-│   │   ├── 🤖 agent.py               # Agente RAG principal
-│   │   ├── 🔗 embedding.py           # Gerenciador embeddings
-│   │   ├── 📄 loader.py              # Carregador documentos
-│   │   └── 🔍 retriever.py           # Recuperador contexto
-│   ├── 📂 core/                      # Core legado
-│   │   ├── ⚙️ config.py              # Configurações
-│   │   └── 🔍 retriever.py           # Recuperador contexto
-│   └── 🗃️ create_vectordb.py         # Criador base conhecimento
-├── 
-├── �� scripts/                       # Scripts de teste
-│   ├── 🔍 check_imports.py           # Diagnóstico dependências
-│   ├── 🧪 test_embeddings.py         # Teste embeddings
-│   ├── 🌐 test_httpx_tls.py          # Teste conectividade
-│   └── 🗃️ test_chroma_local.py       # Teste ChromaDB
-├── 
-├── 📂 data/
-│   ├── 📂 docs/                      # Documentos fonte (criar)
-│   └── 📄 knowledge_base.json        # Base conhecimento (auto)
-├── 
-├── 📂 chroma/                        # Vector store (auto)
-└── 📂 .venv/                         # Ambiente virtual (auto)
-```
-
----
-
-## 🎯 Próximos Passos
-
-1. **✅ Configure** as variáveis de ambiente
-2. **✅ Adicione** seus documentos em `data/docs/`
-3. **✅ Execute** a criação da base de conhecimento
-4. **✅ Inicie** a interface com `streamlit run app.py`
-5. **✅ Teste** fazendo perguntas sobre seus documentos
-
----
-
-## 📞 Suporte
-
-Para problemas específicos:
-
-1. **Execute** os scripts de diagnóstico
-2. **Verifique** os logs no terminal
-3. **Consulte** a seção de solução de problemas
-4. **Teste** componentes individualmente
-
-**🎉 Pronto! Seu sistema MiAmiga RAG está configurado e funcionando!**
+Copyright © 2026 Elisangela Santana - Todos os direitos reservados.

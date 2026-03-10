@@ -260,9 +260,7 @@ streamlit run src\core\frontend\app.py
 ```
 😊 Olá! Que bom te ver aqui! Vou te explicar sobre o Educa Grana...
 
-O Educa Grana é o programa de microcrédito produtivo orientado do Banco 
-do Nordeste. Foi criado para gerar emprego e renda através do apoio às 
-atividades produtivas de pequeno porte.
+O Educa Grana é aplicativo de educação financeira para comunidades de baixa renda, que ensina habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social, através de uma Chat Bot Inteligente
 
 **Principais características:**
 • Atende empreendedores de pequeno porte
