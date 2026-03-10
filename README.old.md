@@ -12,7 +12,7 @@
 
 [Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Glossário](#-glossário-e-query-rewrite) • [Análise](#-análise-e-feedback-loop) • [Segurança](#-segurança)
 
-
+</div>
 ## 📖 Sobre o Projeto
 
 O **Educa Grana** é um aplicativo que propõe uma **"Educação que faz diferença"** para **comunidades de baixa renda**, com foco nos beneficiários do **Bolsa Família**. Desenvolvido como uma atividade extensionista acadêmica, o projeto tem como missão principal o desenvolvimento de um aplicativo de educação financeira, ensinando habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social.
