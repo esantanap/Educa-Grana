@@ -136,8 +136,8 @@ notepad .env  # Windows
 ```bash
 # === API LLM ===
 OPENAI_API_KEY=sua_chave_api_aqui
-OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
-OPENAI_MODEL=bnb-gpt-5-mini
+OPENAI_BASE_URL=https://url
+OPENAI_MODEL=modelopenai
 
 # === SSL Corporativo (BNB) ===
 REQUESTS_CA_BUNDLE=C:\Users\SEU_USER\certs\ca-bnb.pem
@@ -175,48 +175,6 @@ streamlit run src\core\frontend\app.py
 # 🌐 Local: http://localhost:8502
 # �� Network: http://SEU_IP:8502
 ```
-
----
-
-## ⚙️ Configuração
-
-### 📝 Arquivo `.env`
-
-```bash
-# ===================================================================
-# iAmiga - Configuração de Ambiente
-# ===================================================================
-
-# === API LLM (OBRIGATÓRIO) ===
-OPENAI_API_KEY=sua_chave_api_aqui
-OPENAI_BASE_URL=https://bn-s654-litellm-dev.wonderfulmoss-11cca4da.brazilsouth.azurecontainerapps.io
-OPENAI_MODEL=bnb-gpt-5-mini
-
-# === SSL/TLS (OBRIGATÓRIO para BNB) ===
-# Caminho para certificado corporativo ca-bnb.pem
-REQUESTS_CA_BUNDLE=C:\Users\Elis\certs\ca-bnb.pem
-SSL_CERT_FILE=C:\Users\Elis\certs\ca-bnb.pem
-
-# === Desenvolvimento (OPCIONAL) ===
-# Permitir SSL inseguro APENAS em desenvolvimento
-# NUNCA use em produção!
-ALLOW_INSECURE_SSL=false
-
-# === Logging (OPCIONAL) ===
-LOG_LEVEL=INFO  # DEBUG | INFO | WARNING | ERROR
-```
-
-### 🔧 Configurações Disponíveis
-
-| Variável | Padrão | Descrição |
-|----------|--------|-----------|
-| `OPENAI_API_KEY` | *Obrigatório* | Chave de API para LLM |
-| `OPENAI_BASE_URL` | *Obrigatório* | URL base da API LiteLLM |
-| `OPENAI_MODEL` | bnb-gpt-5-mini | Modelo LLM a ser utilizado |
-| `REQUESTS_CA_BUNDLE` | *Obrigatório* | Caminho do certificado SSL corporativo |
-| `SSL_CERT_FILE` | *Obrigatório* | Caminho alternativo para certificado SSL |
-| `ALLOW_INSECURE_SSL` | false | Permitir SSL inseguro (dev apenas) |
-| `LOG_LEVEL` | INFO | Nível de logging (DEBUG, INFO, WARNING, ERROR) |
 
 ---
 
