@@ -1,0 +1,80 @@
+#Nucleo LangChain e OpenAI
+#pip install --index-url=https://repo.dreads.bnb/repository/python/simple --trusted-host repo.dreads.bnb -r requirements.txt
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+openai
+
+# Vetor/DB
+chromadb
+faiss-cpu
+
+# Env
+python-dotenv
+PyYAML
+
+# Loader com Unstructured + PDF
+unstructured[pdf]
+pypdf
+
+# ML/Transformers
+transformers
+sentence-transformers
+torch
+safetensors
+tokenizers
+regex
+tqdm
+
+# Ciência de dados
+numpy
+pandas
+scikit-learn
+scipy
+joblib
+threadpoolctl
+
+# Spark (se realmente precisar)
+pyspark
+pyarrow
+py4j
+
+# Web/Frontend
+streamlit
+altair
+pydeck
+watchdog
+
+# HTTP/Utils
+requests
+urllib3
+certifi
+charset-normalizer
+idna
+filelock
+fsspec
+packaging
+typing_extensions
+toml
+python-dateutil
+pytz
+tzdata
+
+# Git e suporte
+GitPython
+gitdb
+smmap
+
+# Flask/Jinja (usados indiretamente por algumas libs)
+Jinja2
+MarkupSafe
+blinker
+attrs
+colorama
+tenacity
+referencing
+rpds-py
+networkx
+greenlet
+sympy

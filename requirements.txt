@@ -1,0 +1,47 @@
+# ===================================================================
+# IAmiga RAG - Requirements Otimizados
+# Data: 13/01/2026
+# ===================================================================
+
+# Núcleo LangChain e OpenAI
+langchain-core>=0.1.0,<0.2.0
+langchain-openai>=0.0.5,<0.1.0
+langchain-community>=0.0.20,<0.1.0
+langchain-text-splitters>=0.0.1,<0.1.0
+openai>=1.0.0,<2.0.0
+
+# Vector Database
+chromadb>=0.4.0,<0.5.0
+
+# Environment & Config
+python-dotenv>=1.0.0,<2.0.0
+
+# Document Processing
+unstructured[pdf]>=0.10.0,<0.20.0
+pypdf>=3.0.0,<4.0.0
+
+# Machine Learning (apenas o necessário)
+scikit-learn>=1.3.0,<2.0.0
+numpy>=1.24.0,<2.0.0
+
+# Web Frontend
+streamlit>=1.28.0,<2.0.0
+
+# HTTP Client
+requests>=2.31.0,<3.0.0
+
+# ===================================================================
+# BACKUP: requirements.old.txt contém as dependências anteriores
+# 
+# Dependências Removidas (não utilizadas diretamente):
+# - pyspark (muito pesado, 200MB+)
+# - pyarrow (apenas se PySpark)
+# - py4j (apenas se PySpark)
+# - transformers (não usado no código atual)
+# - sentence-transformers (não usado no código atual)
+# - torch (não usado no código atual)
+# - pandas (não usado no código atual)
+# - faiss-cpu (substituído por ChromaDB)
+# - GitPython (não necessário em runtime)
+# - Muitas dependências indiretas já vêm automaticamente
+# ===================================================================

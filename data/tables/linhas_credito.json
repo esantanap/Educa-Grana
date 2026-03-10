@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "source": "1102-05-01 – Linhas de Crédito (18230).pdf",
+    "title": "Linhas de Crédito do Programa Crediamigo",
+    "version": "001",
+    "date": "26/11/2025",
+    "type": "table",
+    "kind": "normativo"
+  },
+  "columns": [
+    "Linha de Crédito",
+    "Modalidade",
+    "Finalidade",
+    "Valores",
+    "Prazo e Carência"
+  ],
+  "data": [
+    {
+      "linha": "Capital de Giro Solidário",
+      "modalidade": "Solidário - Grupo de 3 a 10 clientes",
+      "finalidade": "Capital de giro",
+      "valores": {
+        "minimo": "R$ 100,00",
+        "maximo_inicial": "R$ 4.000,00 no 1º crédito e R$ 8.000,00 nos demais",
+        "maximo_simples": "R$ 6.000,00 no 1º crédito e R$ 15.000,00 nos demais",
+        "maximo_ampliada": "R$ 9.000,00 no 1º crédito e R$ 21.000,00 nos demais"
+      },
+      "prazo": "De 02 a 09 meses, com até 60 dias para pagamento da 1ª parcela"
+    },
+    {
+      "linha": "Capital de Giro Individual",
+      "modalidade": "Individual",
+      "finalidade": "Capital de giro",
+      "valores": {
+        "minimo": "R$ 300,00",
+        "maximo_inicial": "R$ 3.000,00 no 1º crédito e R$ 8.000,00 nos demais",
+        "maximo_simples": "R$ 6.000,00 no 1º crédito e R$ 15.000,00 nos demais",
+        "maximo_ampliada": "R$ 9.000,00 no 1º crédito e R$ 21.000,00 nos demais"
+      },
+      "prazo": "De 02 a 12 meses, com até 60 dias para pagamento da 1ª parcela"
+    },
+    {
+      "linha": "Investimento Fixo",
+      "modalidade": "Individual",
+      "finalidade": "Investimento",
+      "valores": {
+        "minimo": "R$ 300,00",
+        "maximo_inicial": "R$ 8.000,00",
+        "maximo_simples": "R$ 15.000,00",
+        "maximo_ampliada": "R$ 21.000,00"
+      },
+      "prazo": "De 02 a 12 meses, com até 60 dias para pagamento da 1ª parcela"
+    },
+    {
+      "linha": "Crediamigo Comunidade",
+      "modalidade": "Solidário - Banco comunitário de 11 a 30 clientes",
+      "finalidade": "Capital de giro; Investimento",
+      "valores": {
+        "minimo": "R$ 100,00",
+        "maximo": "R$ 1.100,00 no 1º crédito e R$ 8.000,00 nos demais"
+      },
+      "prazo": "De 04 a 12 meses, com até 60 dias para pagamento da 1ª parcela"
+    },
+    {
+      "linha": "Crediamigo Mais",
+      "modalidade": "Individual",
+      "finalidade": "Capital de giro; Investimento",
+      "valores": {
+        "minimo": "R$ 1.000,00",
+        "maximo": "R$ 15.000,00 no 1º crédito e R$ 21.000,00 nos demais"
+      },
+      "prazo": "De 02 a 12 meses, com até 90 dias para pagamento da 1ª parcela"
+    },
+    {
+      "linha": "Crediamigo Delas",
+      "modalidade": "Solidário - Grupo de 3 a 10 clientes; Individual",
+      "finalidade": "Capital de giro; Investimento",
+      "observacao": "Exclusivo para mulheres, ou pessoas que se identificam como do gênero feminino",
+      "valores": {
+        "minimo": "R$ 500,00",
+        "maximo_inicial": "R$ 6.000,00 no 1º crédito e R$ 8.000,00 nos demais",
+        "maximo_simples": "R$ 8.000,00 no 1º crédito e R$ 10.000,00 nos demais",
+        "maximo_ampliada": "R$ 10.000,00 no 1º crédito e R$ 12.000,00 nos demais"
+      },
+      "prazo": "De 04 a 12 meses, com até 90 dias para pagamento da 1ª parcela"
+    }
+  ]
+}

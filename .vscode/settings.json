@@ -1,0 +1,10 @@
+{
+    // Use the project's virtual environment interpreter so Pylance resolves installed packages
+    "python.defaultInterpreterPath": "D:/Pessoal/ProjetosProgramacao/MiAmiga/venv/Scripts/python.exe",
+    // Help the language server find site-packages (relative path)
+    "python.analysis.extraPaths": [
+        "./venv/Lib/site-packages"
+    ],
+    // Enable indexing for faster diagnostics
+    "python.analysis.indexing": true
+}

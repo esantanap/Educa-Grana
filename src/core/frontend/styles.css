@@ -1,0 +1,149 @@
+/* styles.css - IAmiga */
+
+/* ... mantidas suas variáveis e resets ... */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --red: rgb(166, 25, 60);
+  --orange: rgb(246, 139, 31);
+  --gray: rgb(100, 100, 100);
+  --white: #ffffff;
+  --dark-background: #1a1a1a;
+  --sidebar-background: #2b2b2b;
+  --light-gray-text: #e0e0e0;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  color: var(--white);
+  background-color: var(--dark-background);
+}
+
+#MainMenu{ visibility: hidden; }
+footer{ visibility: hidden; }
+header{ visibility: hidden; }
+.stDeployButton{ display: none !important; }
+
+.main > div{
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stApp{
+  background-color: var(--white);
+  color: var(--dark-background);
+}
+
+/* Header com gradiente */
+.main-header-block{
+  background: linear-gradient(135deg, var(--orange) 20%, var(--orange) 100%);
+  padding: 10px 5px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  color: var(--white);
+  width: 100%;
+  overflow: visible !important;
+  position: relative;
+}
+
+.center-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px 0;
+  width: 100%;
+  overflow: visible !important;
+}
+
+/* NOVO: Wrapper da imagem sem formato circular */
+.header-image{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-image img{
+  max-width: 220px;            /* limite máximo para não ficar gigante */
+  width: 100%;                 /* responsivo até o limite */
+  height: auto;                /* mantém proporção natural do PNG */
+  display: block;
+  object-fit: contain;         /* garante que não seja recortada */
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.header-image img:hover{
+  transform: scale(1.03);
+}
+
+/* Texto centralizado no header */
+.center-header .header-text{
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.center-header .header-text h1,
+.header-title{
+  color: var(--orange) !important;
+  font-size: 3.5em !important;
+  margin: 0 0 15px 0 !important;
+  font-weight: 700 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+  letter-spacing: -1px !important;
+}
+
+.center-header .header-text p,
+.header-subtitle{
+  color: var(--orange) !important;
+  font-size: 1.3em !important;
+  margin: 0 !important;
+  opacity: 0.95 !important;
+  font-weight: 400 !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
+}
+
+/* ... mantém botões, alerts, links, sidebar, tipografia, spinner, etc ... */
+
+/* Responsividade */
+@media (max-width: 768px){
+  .main-header-block{
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 30px 20px;
+  }
+  .center-header .header-text h1,
+  .header-title{
+    font-size: 2.5em !important;
+  }
+  .center-header .header-text p,
+  .header-subtitle{
+    font-size: 1.2em !important;
+  }
+  .header-image img{
+    max-width: 140px; /* orangeuz tamanho no mobile */
+  }
+}
+
+/* Remoção de estilos do círculo antigo caso ainda existam no DOM */
+.header-image-circular, .header-image-circular *{
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

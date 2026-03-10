@@ -1,0 +1,28 @@
+{
+  "aliases": {
+    "operação": ["empréstimo", "contrato", "ccb", "financiamento"],
+    "empréstimo": ["operação", "contrato", "ccb"],
+    "desembolso": ["liberação", "crédito liberado"],
+    "parcela": ["prestação", "mensalidade"],
+    "renovação": ["novo ciclo", "recontratação", "reanálise"],
+    "grupo": ["grupo solidário", "grupo Educa Grana", "grupo de crédito"],
+    "documentos": ["documentação", "documentos necessários", "papéis", "comprovantes"],
+    "linhas de crédito": ["modalidades", "tipos de credito", "produtos de credito", "capital giro solidario", "capital giro individual", "investimento fixo", "Educa Grana comunidade", "Educa Grana mais", "Educa Grana delas"],
+    "linha de credito": ["modalidade", "tipo de credito", "produto de credito", "capital giro", "investimento"],
+    "linhas": ["modalidades", "tipos", "produtos", "capital giro", "investimento"],
+    "linha": ["modalidade", "tipo", "produto"],
+    "credito": ["emprestimo", "financiamento", "operacao"],
+    "app Educa Grana": ["aplicativo Educa Grana", "app cliente", "app agente"],
+    "s344": ["sistema Educa Grana", "esteira de crédito", "s344-web"],
+    "madec": ["modelo de decisão", "score Educa Grana"],
+    "conta Educa Grana+": ["conta Educa Grana", "abertura de conta via app", "conta corrente Educa Grana"]
+  },
+  "stop_expansion_in": ["CNPJ", "CPF", "número da operação", "id do grupo"],
+  "doc_boosts": {
+    "normativo": 1.3,
+    "procedimento": 1.25,
+    "fluxo_operacional": 1.2,
+    "apresentacao": 1.05,
+    "oneoff_nota": 1.0
+  }
+}

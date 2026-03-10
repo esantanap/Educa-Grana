@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Telemetria - MiAmiga</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 15px; }
+        .metric { display: inline-block; background: #ecf0f1; padding: 15px 25px; margin: 10px; border-radius: 5px; min-width: 150px; }
+        .metric-value { font-size: 32px; font-weight: bold; color: #3498db; }
+        .metric-label { font-size: 14px; color: #7f8c8d; margin-top: 5px; }
+        .success { color: #27ae60; }
+        .warning { color: #f39c12; }
+        .danger { color: #e74c3c; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #3498db; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #ecf0f1; }
+        tr:hover { background: #f8f9fa; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 12px; font-weight: bold; }
+        .badge-success { background: #27ae60; color: white; }
+        .badge-warning { background: #f39c12; color: white; }
+        .badge-danger { background: #e74c3c; color: white; }
+        .timestamp { text-align: right; color: #95a5a6; font-size: 12px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Relatório de Telemetria - MiAmiga</h1>
+        <p>Análise completa do sistema de Query Rewrite + Re-ranking</p>
+        
+        <h2>📈 Métricas Gerais</h2>
+        <div>
+            <div class="metric">
+                <div class="metric-value">10</div>
+                <div class="metric-label">Total de Eventos</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">5</div>
+                <div class="metric-label">Queries Processadas</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">5</div>
+                <div class="metric-label">Votos Recebidos</div>
+            </div>
+        </div>
+        
+        <h2>🔄 Expansão de Queries</h2>
+        <div>
+            <div class="metric">
+                <div class="metric-value warning">40.0%</div>
+                <div class="metric-label">Taxa de Expansão</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">2</div>
+                <div class="metric-label">Queries Expandidas</div>
+            </div>
+        </div>
+        
+        <h3>Top 10 Termos Adicionados</h3>
+        <table>
+            <tr><th>Termo</th><th>Frequência</th></tr>
+            <tr><td>contrato</td><td>2</td></tr>
+            <tr><td>ccb</td><td>2</td></tr>
+            <tr><td>emprestimo</td><td>1</td></tr>
+            <tr><td>operacao</td><td>1</td></tr>
+        </table>
+        
+        <h2>👍👎 Análise de Votos</h2>
+        <div>
+            <div class="metric">
+                <div class="metric-value danger">60.0%</div>
+                <div class="metric-label">Taxa de Satisfação</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value success">3</div>
+                <div class="metric-label">👍 Positivos</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value danger">2</div>
+                <div class="metric-label">👎 Negativos</div>
+            </div>
+        </div>
+        
+        <h3>Queries com Mais Votos Negativos (precisam atenção!)</h3>
+        <table>
+            <tr><th>Query</th><th>Votos 👎</th></tr>
+            <tr><td>Documentos necessários para CCB...</td><td><span class='badge badge-danger'>1</span></td></tr>
+            <tr><td>Qual a taxa de juros?...</td><td><span class='badge badge-danger'>1</span></td></tr>
+        </table>
+        
+        <h3>Documentos com Mais Votos Negativos (revisar relevância!)</h3>
+        <table>
+            <tr><th>Documento ID</th><th>Votos 👎</th></tr>
+            <tr><td>apresentacao-geral.pdf</td><td><span class='badge badge-danger'>1</span></td></tr>
+            <tr><td>e-book01.pdf</td><td><span class='badge badge-danger'>1</span></td></tr>
+            <tr><td>apresentacao-produtos.pdf</td><td><span class='badge badge-danger'>1</span></td></tr>
+        </table>
+        
+        <h2>🔍 Padrões de Busca</h2>
+        <div>
+            <div class="metric">
+                <div class="metric-value">4.4</div>
+                <div class="metric-label">Média de Resultados</div>
+            </div>
+        </div>
+        
+        <h3>Top 15 Queries Mais Frequentes</h3>
+        <table>
+            <tr><th>Query (normalizada)</th><th>Frequência</th></tr>
+            <tr><td>qual os prazo das operacoes?</td><td>1</td></tr>
+            <tr><td>como funciona o emprestimo?</td><td>1</td></tr>
+            <tr><td>documento necessario para ccb</td><td>1</td></tr>
+            <tr><td>qual a taxa de juros?</td><td>1</td></tr>
+            <tr><td>crediamigo tem limite maximo?</td><td>1</td></tr>
+        </table>
+        
+        <h2>⚠️ Termos Candidatos para Glossário</h2>
+        <p>Termos que aparecem frequentemente em queries SEM expansão (podem precisar de aliases):</p>
+        <table>
+            <tr><th>Termo</th><th>Frequência</th><th>Sugestão</th></tr>
+            <tr><td><strong>documento</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>necessario</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>para</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>taxa</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>juros?</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>crediamigo</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>limite</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+            <tr><td><strong>maximo?</strong></td><td><span class='badge badge-success'>1</span></td><td>Adicionar ao glossário?</td></tr>
+        </table>
+        
+        <div class="timestamp">
+            Relatório gerado em: 13/01/2026 11:37:28
+        </div>
+    </div>
+</body>
+</html>
