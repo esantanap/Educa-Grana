@@ -293,7 +293,7 @@ python scripts/run_weekly_analysis.py
     "desembolso": ["liberação", "crédito liberado"],
     "parcela": ["prestação", "mensalidade"],
     "renovação": ["novo ciclo", "recontratação"],
-    "grupo": ["grupo solidário", "grupo crediamigo"]
+    "grupo": ["grupo solidário", "grupo Educa Grana"]
   },
   "stop_expansion_in": [
     "CNPJ", 

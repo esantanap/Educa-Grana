@@ -130,7 +130,7 @@ python scripts/run_weekly_analysis.py
 
 **Insights automáticos:**
 1. ✅ "operacao" e "prazo" aparecem juntos 5x → sugerir alias
-2. ✅ "crediamigo" e "prazo" aparecem juntos 4x → sugerir alias
+2. ✅ "Educa Grana" e "prazo" aparecem juntos 4x → sugerir alias
 3. ⚠️ Satisfação 0% → investigar queries com 👎
 
 **Ações recomendadas:**
@@ -138,7 +138,7 @@ python scripts/run_weekly_analysis.py
 {
   "aliases": {
     "operacao": ["emprestimo", "contrato", "ccb", "prazo"],
-    "crediamigo": ["programa", "microcredito", "prazo"]
+    "Educa Grana": ["programa", "microcredito", "prazo"]
   }
 }
 ```

@@ -80,7 +80,7 @@ miamiga/
 │   ├── telemetry_report.html       # Dashboard visual
 │   └── glossary_suggestions.md     # Sugestões automáticas
 │
-├── docs/                           # PDFs do Crediamigo (89 arquivos)
+├── docs/                           # PDFs do Educa Grana (89 arquivos)
 ├── .env                            # Configurações (copiar de .env.example)
 └── README.md                       # ⭐ Documentação principal
 ```

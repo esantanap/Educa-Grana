@@ -1,4 +1,4 @@
-# 🤖 IAmiga - Assistente Virtual Crediamigo
+# 🤖 IAmiga - Assistente Virtual Educa Grana
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 ![TF--IDF](https://img.shields.io/badge/Search-TF--IDF-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
 
-**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Crediamigo do Banco do Nordeste**
+**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana do Banco do Nordeste**
 
 [Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Glossário](#-glossário-e-query-rewrite) • [Análise](#-análise-e-feedback-loop) • [Segurança](#-segurança)
 
@@ -18,7 +18,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **IAmiga** é a assistente virtual especializada do Programa Crediamigo, desenvolvida para responder perguntas sobre microfinanças, procedimentos operacionais e políticas do programa. O sistema utiliza tecnologias modernas de IA para:
+O **IAmiga** é a assistente virtual especializada do Programa Educa Grana, desenvolvida para responder perguntas sobre microfinanças, procedimentos operacionais e políticas do programa. O sistema utiliza tecnologias modernas de IA para:
 
 - 🔍 **Buscar** informações relevantes em documentos técnicos e manuais
 - 🧠 **Compreender** perguntas em linguagem natural (português)
@@ -46,7 +46,7 @@ O **IAmiga** é a assistente virtual especializada do Programa Crediamigo, desen
 
 ```mermaid
 graph TB
-    A[📄 89 PDFs Crediamigo] --> B[🔄 create_vectordb.py]
+    A[📄 89 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
     B --> C[📊 knowledge_base.json<br/>1035 documentos]
     C --> D[🔍 TF-IDF Search Engine<br/>scikit-learn]
     
@@ -81,7 +81,7 @@ graph TB
 
 ### 📊 Estatísticas da Base de Conhecimento
 
-- **📄 Documentos fonte:** 89 PDFs + 1 TXT (crediamigo_base.txt)
+- **📄 Documentos fonte:** 89 PDFs + 1 TXT (Educa Grana_base.txt)
 - **📚 Chunks processados:** 1035 documentos indexados
 - **🔍 Vetores TF-IDF:** 5000 features extraídas
 - **⚡ Performance:** < 0.001s para busca em 1035 documentos
@@ -152,7 +152,7 @@ ALLOW_INSECURE_SSL=false  # Apenas para desenvolvimento
 
 ```powershell
 # Adicionar PDFs na pasta data/docs/
-# Já existe crediamigo_base.txt + 89 PDFs
+# Já existe Educa Grana_base.txt + 89 PDFs
 
 # Processar documentos e criar knowledge_base.json
 python src/create_vectordb.py
@@ -233,7 +233,7 @@ streamlit run src\core\frontend\app.py
 **Fluxo de uso:**
 
 1. **Acesse:** http://localhost:8502
-2. **Digite:** Sua pergunta sobre Crediamigo
+2. **Digite:** Sua pergunta sobre Educa Grana
 3. **Aguarde:** Processamento da busca e geração da resposta
 4. **Visualize:** 
    - Resposta formatada da AiAmiga
@@ -244,23 +244,23 @@ streamlit run src\core\frontend\app.py
 ### 2. **Exemplos de Perguntas**
 
 **✅ Perguntas Eficazes:**
-- "O que é o Crediamigo?"
-- "Quais os requisitos para ser cliente do Crediamigo?"
+- "O que é o Educa Grana?"
+- "Quais os requisitos para ser cliente do Educa Grana?"
 - "Como funciona o processo de crédito?"
 - "Quais as taxas de juros praticadas?"
 - "Como solicitar um empréstimo?"
 
 **❌ Evite:**
 - Perguntas muito genéricas ("Me fale tudo")
-- Perguntas fora do escopo (não relacionadas ao Crediamigo)
+- Perguntas fora do escopo (não relacionadas ao Educa Grana)
 - Múltiplas perguntas em uma única mensagem
 
 ### 3. **Resposta Típica**
 
 ```
-😊 Olá! Que bom te ver aqui! Vou te explicar sobre o Crediamigo...
+😊 Olá! Que bom te ver aqui! Vou te explicar sobre o Educa Grana...
 
-O Crediamigo é o programa de microcrédito produtivo orientado do Banco 
+O Educa Grana é o programa de microcrédito produtivo orientado do Banco 
 do Nordeste. Foi criado para gerar emprego e renda através do apoio às 
 atividades produtivas de pequeno porte.
 
@@ -270,15 +270,15 @@ atividades produtivas de pequeno porte.
 • Crédito com condições especiais
 
 📚 Fontes consultadas:
-1. **Manual_Crediamigo_2024.pdf** (relevância: 0.85)
+1. **Manual_Educa Grana_2024.pdf** (relevância: 0.85)
 2. **Procedimentos_Operacionais.pdf** (relevância: 0.72)
-3. **FAQ_Crediamigo.pdf** (relevância: 0.68)
+3. **FAQ_Educa Grana.pdf** (relevância: 0.68)
 
 🧠 Resposta gerada com busca semântica
 
 Estou aqui se precisar de mais alguma informação! 😊
 
-🤖 AiAmiga - Assistente Virtual do Crediamigo
+🤖 AiAmiga - Assistente Virtual do Educa Grana
 ```
 
 ### 4. **Usar Diretamente via Python**
@@ -287,7 +287,7 @@ Estou aqui se precisar de mais alguma informação! 😊
 from src.agent import answer_question
 
 # Fazer uma pergunta
-question = "O que é o Crediamigo?"
+question = "O que é o Educa Grana?"
 response = answer_question(question)
 
 pri
@@ -486,8 +486,8 @@ miamiga/
 │   ├── 📊 knowledge_base.json        # ⭐ Base indexada (1035 docs)
 │   │
 │   └── 📂 docs/                      # Documentos fonte
-│       ├── 📕 crediamigo_base.txt    # Base textual
-│       └── 📕 *.pdf                  # 89 PDFs do Crediamigo
+│       ├── 📕 Educa Grana_base.txt    # Base textual
+│       └── 📕 *.pdf                  # 89 PDFs do Educa Grana
 │
 ├── 📂 scripts/                       # Scripts utilitários
 │   ├── 🔍 check_imports.py           # Verificar dependências
@@ -566,7 +566,7 @@ python test_security_improvements.py
 ✅ SSL configurado: C:\Users\...\ca-bnb.pem
 
 ❓ Testando pergunta simples...
-Pergunta: O que é o Crediamigo?
+Pergunta: O que é o Educa Grana?
 Processando...
 ✅ Resposta recebida (1123 caracteres)
 
