@@ -8,7 +8,7 @@
 ![TF--IDF](https://img.shields.io/badge/Search-TF--IDF-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
 
-**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana do Banco do Nordeste**
+**Sistema RAG (Retrieval-Augmented Generation) especializado em consultas sobre o Programa Educa Grana **
 
 [Instalação](#-instalação-rápida) • [Configuração](#️-configuração) • [Uso](#-como-usar) • [Glossário](#-glossário-e-query-rewrite) • [Análise](#-análise-e-feedback-loop) • [Segurança](#-segurança)
 
@@ -18,7 +18,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **IAmiga** é a assistente virtual especializada do Programa Educa Grana, desenvolvida para responder perguntas sobre microfinanças, procedimentos operacionais e políticas do programa. O sistema utiliza tecnologias modernas de IA para:
+O **IAmiga** é a assistente virtual especializada do Programa Educa Grana, aplicativo de educação financeira para comunidades de baixa renda, que ensina habilidades financeiras básicas e fornecendo acesso a informações sobre programas de assistência social.:
 
 - 🔍 **Buscar** informações relevantes em documentos técnicos e manuais
 - 🧠 **Compreender** perguntas em linguagem natural (português)
@@ -109,8 +109,8 @@ git --version
 
 ```powershell
 # Clone o repositório
-git clone https://gitlab.dreads.bnb/cinm/projetos-estrategicos-cinm/iamiga.git
-cd iamiga
+git clone https://github.com/esantanap/Educa-Grana.git
+
 
 # Criar e ativar ambiente virtual
 python -m venv venv
@@ -158,8 +158,8 @@ ALLOW_INSECURE_SSL=false  # Apenas para desenvolvimento
 python src/create_vectordb.py
 
 # Resultado esperado:
-# ✅ 89 PDFs processados
-# ✅ 1035 documentos extraídos
+# ✅ XX PDFs processados
+# ✅ YYYY documentos extraídos
 # ✅ knowledge_base.json criado
 ```
 
@@ -185,7 +185,7 @@ streamlit run src\core\frontend\app.py
 
 ```bash
 # ===================================================================
-# MiAmiga - Configuração de Ambiente
+# iAmiga - Configuração de Ambiente
 # ===================================================================
 
 # === API LLM (OBRIGATÓRIO) ===
@@ -404,7 +404,7 @@ python scripts/run_weekly_analysis.py
 **Linux/Mac - Crontab:**
 ```bash
 # Toda segunda-feira às 9h
-0 9 * * 1 cd /path/to/miamiga && python scripts/run_weekly_analysis.py
+0 9 * * 1 cd /path/to/iAmiga && python scripts/run_weekly_analysis.py
 ```
 
 ---nt(response)
@@ -461,7 +461,7 @@ python test_security_improvements.py
 ## 📁 Estrutura do Projeto
 
 ```
-miamiga/
+iAmiga/
 ├── 📄 README.md                      # Este arquivo
 ├── 📝 .env.example                   # Template de configuração
 ├── 🔒 .env                           # Configuração local (criar, não commitado)
@@ -524,7 +524,7 @@ python test_security_improvements.py
 **Saída esperada:**
 
 ```
-🧪 TESTE DAS MELHORIAS DE SEGURANÇA - MIAMIGA
+🧪 TESTE DAS MELHORIAS DE SEGURANÇA - iAmiga
 ═══════════════════════════════════════════════
 
 🔑 Testando variáveis de ambiente...
@@ -661,7 +661,7 @@ streamlit run src\core\frontend\app.py --server.port 8503
 
 ```powershell
 # Verificar se está no diretório correto
-cd C:\Users\...\miamiga
+cd C:\Users\...\iAmiga
 
 # Verificar se ambiente virtual está ativo
 .\venv\Scripts\activate
