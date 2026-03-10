@@ -1,11 +1,3 @@
-Elis, com base nas informações do PDF fornecido e no seu `README.md` atual, fiz as adaptações necessárias para que o documento reflita integralmente as informações negociais do projeto `Educa Grana`, mantendo a clareza e os detalhes técnicos da assistente virtual `IAmiga`.
-
-Ajustei a seção "Sobre o Projeto" para incorporar mais diretamente a visão do PDF, e refinei o exemplo de "Resposta Típica" para que ele seja totalmente alinhado aos objetivos do Educa Grana, conforme descrito no documento extensionista.
-
-Aqui está o `README.md` atualizado:
-
----
-
 # �� IAmiga - Assistente Virtual Educa Grana
 
 <div align="center">
@@ -54,7 +46,7 @@ O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS
 
 - **Interface Amigável:** Chat moderno via Streamlit com histórico de conversas
 - **Personalidade Humanizada:** Respostas acolhedoras e cordiais, como uma amiga ajudando
-- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para 1035 documentos)
+- **Busca Semântica TF-IDF:** Recuperação rápida e eficiente (< 0.01s para YY documentos)
 - **Query Rewrite + Re-ranking:** Expansão inteligente de queries com glossário de domínio
 - **Conteúdo Educativo:** Oferece orientações claras e concisas sobre tópicos essenciais para o público do Educa Grana, como planejamento de orçamento, poupança, investimento e gestão de dívidas, adaptados para fácil compreensão.
 - **Feedback Loop:** Sistema de votos (👍👎) e telemetria para melhoria contínua
@@ -67,8 +59,8 @@ O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS
 
 ```mermaid
 graph TB
-    A[📄 89 PDFs Educa Grana] --> B[🔄 create_vectordb.py]
-    B --> C[📊 knowledge_base.json<br/>1035 documentos]
+    A[📄 XX PDFs Educa Grana] --> B[🔄 create_vectordb.py]
+    B --> C[📊 knowledge_base.json<br/>YY documentos]
     C --> D[�� TF-IDF Search Engine<br/>scikit-learn]
     
     E[👤 Usuário] --> F[💬 Streamlit Frontend<br/>localhost:8502]
@@ -91,10 +83,10 @@ graph TB
 
 ## 📊 Estatísticas da Base de Conhecimento
 
-- **📄 Documentos fonte:** 89 PDFs + 1 TXT (Educa Grana_base.txt)
-- **📚 Chunks processados:** 1035 documentos indexados
+- **📄 Documentos fonte:** XX PDFs + 1 TXT (Educa Grana_base.txt)
+- **📚 Chunks processados:** YY documentos indexados
 - **🔍 Vetores TF-IDF:** 5000 features extraídas
-- **⚡ Performance:** < 0.001s para busca em 1035 documentos
+- **⚡ Performance:** < 0.001s para busca em YY documentos
 - **🏷️ Metadados:** kind, title, section, version_date para cada documento
 
 ---
@@ -160,7 +152,7 @@ ALLOW_INSECURE_SSL=false  # Apenas para desenvolvimento
 
 ```powershell
 # Adicionar PDFs na pasta data/docs/
-# Já existe Educa Grana_base.txt + 89 PDFs
+# Já existe Educa Grana_base.txt + XX PDFs
 
 # Processar documentos e criar knowledge_base.json
 python src/create_vectordb.py
@@ -203,8 +195,8 @@ OPENAI_MODEL=bnb-gpt-5-mini
 
 # === SSL/TLS (OBRIGATÓRIO para BNB) ===
 # Caminho para certificado corporativo ca-bnb.pem
-REQUESTS_CA_BUNDLE=C:\Users\F147176\certs\ca-bnb.pem
-SSL_CERT_FILE=C:\Users\F147176\certs\ca-bnb.pem
+REQUESTS_CA_BUNDLE=C:\Users\Elis\certs\ca-bnb.pem
+SSL_CERT_FILE=C:\Users\Elis\certs\ca-bnb.pem
 
 # === Desenvolvimento (OPCIONAL) ===
 # Permitir SSL inseguro APENAS em desenvolvimento
@@ -252,11 +244,11 @@ streamlit run src\core\frontend\app.py
 ### 2. **Exemplos de Perguntas**
 
 **✅ Perguntas Eficazes:**
-- "O que é o Educa Grana?"
-- "Quais os objetivos do Educa Grana para comunidades de baixa renda?"
-- "Como o Educa Grana promove a inclusão financeira?"
-- "Quais ODS o projeto Educa Grana apoia?"
-- "Quais resultados são esperados com o aplicativo Educa Grana?"
+- "O que faço para não pagar juros ?"
+- "Não tenho grana para pagar o cartão, o que faço"
+- "Perdi o emprego o que faço agora?"
+- "Estou pensando em emprrender, o que devo fazer?"
+
 
 **❌ Evite:**
 - Perguntas muito genéricas ("Me fale tudo")
@@ -487,11 +479,11 @@ iAmiga/
 │           └── 🎨 app.py             # Interface Streamlit
 │
 ├── 📂 data/                          # Dados do sistema
-│   ├── 📊 knowledge_base.json        # ⭐ Base indexada (1035 docs)
+│   ├── 📊 knowledge_base.json        # ⭐ Base indexada (YY docs)
 │   │
 │   └── �� docs/                      # Documentos fonte
 │       ├── 📕 Educa Grana_base.txt    # Base textual
-│       └── 📕 *.pdf                  # 89 PDFs do Educa Grana
+│       └── 📕 *.pdf                  # XX PDFs do Educa Grana
 │
 ├── 📂 scripts/                       # Scripts utilitários
 │   ├── �� check_imports.py           # Verificar dependências
@@ -511,7 +503,7 @@ iAmiga/
 | `src/agent.py` | 514 | **Core do sistema:** busca TF-IDF, API LLM, citação de fontes |
 | `src/create_vectordb.py` | ~100 | Processa PDFs e cria knowledge_base.json |
 | `src/core/frontend/app.py` | ~150 | Interface Streamlit com chat |
-| `data/knowledge_base.json` | 1035 docs | Base de conhecimento indexada |
+| `data/knowledge_base.json` | YY docs | Base de conhecimento indexada |
 | `requirements.txt` | 15 deps | Dependências otimizadas |
 
 ---
@@ -564,8 +556,8 @@ Total: 4/4 testes passaram
 python src/agent.py
 
 # Logs esperados:
-# [KB] Base carregada: 1035 documentos
-# [ENGINE] Sistema TF-IDF inicializado! Vetores: (1035, 5000)
+# [KB] Base carregada: YY documentos
+# [ENGINE] Sistema TF-IDF inicializado! Vetores: (YY, 5000)
 # [SEARCH] Busca TF-IDF: 5 resultados em 0.001s
 # [API] Sucesso com certificado customizado
 # [AGENT] Resposta gerada com sucesso!
@@ -686,7 +678,7 @@ Os emojis aparecem apenas nas respostas ao usuário (Streamlit suporta UTF-8).
 - ✅ Classificação automática de documentos (kind: normativo, procedimento, etc.)
 - ✅ Extração de versão/data dos PDFs
 - ✅ Extração de títulos dos documentos
-- ✅ 1035 documentos com metadados completos
+- ✅ YY documentos com metadados completos
 
 **📖 Documentação:**
 - ✅ COMO_ADICIONAR_AO_GLOSSARIO.md - Guia completo do glossário
